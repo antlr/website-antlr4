@@ -34,9 +34,9 @@
 		        $(".tweet").tweet({
 		            username: "the_antlr_guy",
 		            join_text: "auto",
-		            avatar_size: 70,
-		            count: 3,
-		            template: "{avatar}{text}{time}",
+		            avatar_size: 25,
+		            count: 4,
+		            template: "{avatar}{text}",
 		            loading_text: "loading tweets..."
 		        });
 		    });
@@ -70,10 +70,16 @@
 	
 <h2>What is ANTLR?</h2>
 
-<p><strong>ANTLR</strong> (ANother Tool for Language Recognition), is a <a href="#">language tool</a> that provides a framework for constructing recognizers, interpreters, compilers, and <a href="#">translators</a> from grammatical descriptions containing actions in a variety of target languages. ANTLR provides excellent support for <a href="#">tree walking</a>, <a href="#">error recovery</a>, and <a href="#">error reporting</a>.</p>
+<p><strong>ANTLR</strong> (ANother Tool for Language Recognition) is a
+powerful parser generator for reading, processing, executing, or
+translating structured text or binary files. It's widely used to build
+languages, tools, and frameworks.  From a grammar, ANTLR generates a
+parser that can build and walk parse trees.</p>
 
 <div id="terence"><img src="images/terence.jpg" alt="terence" />
-<strong>Terence Parr</strong> is the maniac behind ANTLR and has been working on language tools since 1989. He is a professor of computer science at the University of San Francisco. 
+<strong>Terence Parr</strong> is the maniac behind ANTLR and has been
+working on language tools since 1989. He is a professor of computer
+science at the <a href="http://www.cs.usfca.edu/~parrt">University of San Francisco</a>.
 </div>
 	
 </div><!--/col3-->
@@ -127,6 +133,7 @@ Fill in
 	<div class="slide">
 		
 		<pre class="pre3">
+<pre class="block">
 grammar Expr;		
 prog:	(expr NEWLINE)* ;
 expr:	expr ('*'|'/') expr
@@ -145,7 +152,7 @@ $ grun Expr prog -gui
 		</pre>
 		
 		<pre class="pre3">
-<img src="images/sample3.png" alt="sample3" width="112" height="166" />
+<img src="images/sample3.png" alt="sample3" width="130"/>
 		</pre>
 		
 		
@@ -159,8 +166,6 @@ $ grun Expr prog -gui
 	<div id="pager-sa" class="pager"></div>
 	
 </div><!--/module-->
-
-
 
 </div><!--/main-->
 
@@ -186,14 +191,14 @@ time. For example, I just discovered a feature in rewrite rules that
 does exactly what I need (referencing previous rule ASTs, p. 174 in
 your book). It took me about 5 minutes to get this to work and remove
 an ugly wart from my grammar. Hats off!
-<strong>Guido van Rossum</strong>
+<strong>Guido van Rossum, Inventor of Python</strong>
 	</div>
 
 	<div class="testimonial">
 ANTLR is an exceptionally powerful and flexible tool for parsing
 formal languages. At Twitter, we use it exclusively for query parsing
 in Twitter search. Our grammars are clean and concise, and the
-generated code is efficient and stable. The book is our go-to
+generated code is efficient and stable. The <a href="http://pragprog.com/book/tpantlr2/the-definitive-antlr-4-reference">book</a> is our go-to
 reference for ANTLR v4 -- engaging writing, clear descriptions and
 practical examples all in one place.
 <strong>Samuel Luckenbill, Senior Manager of Search Infrastructure, Twitter, inc.</strong>
@@ -204,7 +209,7 @@ Just wanted to take the opportunity to say thanks. ANTLR is a BIG
 improvement over yacc/lex, and your support for it most
 commendable. Managed to get my tired old brain around it in a
 day. Nice work!
-<strong>Brad Cox; Inventor of Objective-C</strong>
+<strong>Brad Cox, Inventor of Objective-C</strong>
 	</div>
 
 	<div class="testimonial">
@@ -233,6 +238,9 @@ Documentation</a>
 <br><br><a href="https://github.com/antlr/antlr4">Browse source tree (github)</a>
 
 <br><br><a href="http://www.antlr.org/wiki/display/ANTLR4/ANTLR+v4+FAQ">Frequently Asked Questions</a>
+
+
+<br><br><a href="http://www.stringtemplate.org">StringTemplate template engine</a>
 
 </div><!--/col3-->
 	
