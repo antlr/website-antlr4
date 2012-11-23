@@ -67,7 +67,7 @@ pre.pre3 { min-height: 190px; float: left; width: 168px; padding: 0 10px 0 0; ma
 pre.pre3:nth-child(3) { margin: 0; border: 0; padding-right: 0; }
 pre.pre3 img { margin: 0 0 0 5px; }
 
-pre.block { font: 13px/20px 'DejaVuSansMonoBook'; color: #31a2e6; padding: 15px; background: #FFF; color: #31a2e6; margin: 10px 0 20px; }
+pre.block { font: 11px/15px 'DejaVuSansMonoBook'; color: #31a2e6; padding: 15px; background: #FFF; color: #31a2e6; margin: 10px 0 20px; }
 
 /* --- Design elements --- */
 
