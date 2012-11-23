@@ -1,0 +1,12 @@
+document.write("<ul>");
+document.write("<li><a href='index.html'>Index</a></li>");
+document.write("<li><a href='#'>Download</a></li>");
+document.write("<li><a href='#'>ANTLRWorks</a></li>");
+document.write("<li><a href='#'>Book</a></li>");
+document.write("<li><a href='#'>Doc</a></li>");
+document.write("<li><a href='#'>About ANTLR</a></li>");
+document.write("<li><a href='#'>Support</a></li>");
+document.write("<li><a href='#'>Bugs</a></li>");
+document.write("<li><a href='#'>V3</a></li>");
+document.write("</ul>");
+document.write("<small>&copy; Copyright ANTLR / Terence Parr 2012</small>");
