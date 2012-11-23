@@ -1,0 +1,83 @@
+Methodology: typed "antlr grammar" into sourceforge.net and google
+code.  Downloaded source for any project that wasn't obviously
+something not using antlr. (lots of parser generators matching those
+keywords).
+
+Initial count:
+~/research/papers/LL-star/grammars-in-wild $ find . -name '*.g' |wc -l
+     110
+
+rm ANTLR temp files like Gaml__.g and generated grammars from
+inheritance: expandedGnuCParser.g (v2?). Discount ANTLRv3.g
+ANTLRv3Tree.g from distribution
+
+$ find . -name '*__.g' -exec rm {} \;
+$ find . -name '*expanded*.g' -exec rm {} \;
+$ find . -name ANTLRv3Tree.g -exec rm {} \;
+$ find . -name ANTLRv3.g -exec rm {} \;
+
+Count:
+
+$ find . -name '*.g' |wc -l
+     103
+
+Some are dups:
+
+$ find . -name '*.g' | sed 's#.*/\(.*.g\)#\1#' | sort | uniq -c |sort -r -n
+   6 TreePHP.g
+   6 CompilerAst.g
+   2 generic.g
+   2 Jiffle.g
+   2 ComponentTreeParser.g
+   2 ComponentParser.g
+...
+
+rm dups by copying to single dir:
+
+$ find . -name '*.g' -exec cp {} /tmp/flat \;
+
+Count:
+
+$ ls flat|wc -l
+89
+
+Compute stats (ugh):
+
+$ more *.g
+
+track lexers, combined, parser, tree parser and actions/no-actions
+Count v2 also. 
+
+Include sem preds.
+
+Don't count ANTLR tree construction related or lexer actions like skip(). Don't count @members
+
+$ ls > stats
+
+Then add 1 or 0 column depending on whether or not the actions in the grammar.
+
+~/research/papers/LL-star/grammars-in-wild $ grep 0 stats | wc -l
+      22
+~/research/papers/LL-star/grammars-in-wild $ grep 1 stats | wc -l
+      68
+
+$ grep '^tree grammar' *.g |wc -l
+      28
+$ grep 'lexer grammar' *.g |wc -l
+       1
+$ grep '^grammar ' *.g |wc -l
+      19
+
+$ grep -l '^class ' *.g|wc -l   # v2 grammars
+      41
+$ grep 'extends TreeParser' *.g | wc -l  # v2 tree grammars
+      15
+
+Totals up to 89. sanity check. 41 v2, 48 v3
+
+43 tree grammars
+
+Compute size of grammars in lines
+
+~/research/papers/LL-star/grammars-in-wild/flat $ for f in `cat /tmp/g`; do wc -l $f ; done | awk '{n += $1} END {print n/89}'
+660.775

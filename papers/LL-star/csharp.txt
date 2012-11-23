@@ -1,0 +1,256 @@
+STATIC ANALYSIS
+
+$ wc -l `ls *.g|grep -v walker`
+    3481 csharp.g
+
+~/research/papers/LL-star/ANTLR-grammars-private/csharp/java/src/main/antlr3/com/temporalwave/parsers/csharp $ time a -report csharp.g > /tmp/j
+
+real	0m6.334s
+user	0m13.643s
+sys	0m1.353s
+~/research/papers/LL-star/ANTLR-grammars-private/csharp/java/src/main/antlr3/com/temporalwave/parsers/csharp $ cat /tmp/j|awk '{print $4 " " $5 " " $6}' |sort |uniq -c |sort -r -n|more
+ 170 k=1  
+  23 k=1 backtracks 
+  19 k=2  
+   2 cyclic sempred 
+   2 cyclic backtracks 
+   1 k=1 backtracks sempred
+
+~/research/papers/LL-star/ANTLR-grammars-private/csharp/java/src/main/antlr3/com/temporalwave/parsers/csharp $ wc -l /tmp/j
+     217 /tmp/j
+
+PARSE-TIME
+
+from help menu in VS
+http://code.msdn.microsoft.com/cs2008samples
+
+~/research/papers/LL-star/ANTLR-grammars-private/csharp/ter $ wc tests/LinqSamples/SampleQueries/LinqToSqlSamples.cs 
+    3807   13947  160567 tests/LinqSamples/SampleQueries/LinqToSqlSamples.cs
+
+~/research/papers/LL-star/ANTLR-grammars-private/csharp/ter $ time j -Xmx600M Main tests/LinqSamples/SampleQueries/LinqToSqlSamples.cs 
+parse(tests/LinqSamples/SampleQueries/LinqToSqlSamples.cs)
+[temp] Unknown character '?' (0xfeff) Unicode glyph?
+    Lexer Start
+      lexed in 0ms.
+    Parser Start
+ANTLR Runtime Report; Profile Version 3
+parser name csharpParser
+Number of rule invocations 143966
+Number of unique rules visited 139
+Number of decision events 141055
+Overall average k per decision event 1.0380774
+Number of backtracking occurrences (can be multiple per decision) 5192
+Overall average k per decision event that backtracks 1.5955316
+Number of rule invocations while backtracking 0
+num decisions that potentially backtrack 24
+num decisions that do backtrack 19
+num decisions that potentially backtrack but don't 5
+average % of time a potentially backtracking decision backtracks 40.221424
+num unique decisions covered 146
+max rule invocation nesting depth 186
+rule memoization cache size 0
+number of rule memoization cache hits 0
+number of rule memoization cache misses 0
+number of tokens 19599
+number of hidden tokens 11877
+number of char 0
+number of hidden char 0
+number of syntax errors 0
+
+location	n	avgk	maxk	synpred	sempred	canbacktrack
+1@csharp.g:191:5(compilationUnit)	1	1.00	1	0	0	0
+2@csharp.g:192:3(compilationUnit)	1	1.00	1	0	0	0
+48@csharp.g:583:5(usingDirectives)	18	1.00	1	0	0	0
+49@csharp.g:593:4(usingSpec)	17	2.00	2	0	0	0
+214@csharp.g:2251:1(identifierOrsimpleType)	3065	1.00	1	0	0	0
+185@csharp.g:1846:1(identifier)	11288	1.00	1	0	0	0
+213@csharp.g:2222:3(typeElement)	3050	1.04	4	0	50	0
+211@csharp.g:2200:31(namespaceOrTypeName)	3032	1.00	1	0	0	0
+3@csharp.g:193:3(compilationUnit)	1	1.00	1	0	0	1
+4@csharp.g:194:3(compilationUnit)	1	1.00	1	0	0	0
+44@csharp.g:559:4(namespaceMemberDeclarations)	4	1.00	1	0	0	0
+45@csharp.g:562:1(namespaceMemberDeclaration)	2	1.00	1	0	0	0
+46@csharp.g:568:15(qualifiedIdentifier)	1	1.00	1	0	0	0
+41@csharp.g:551:3(namespaceBody)	1	1.00	1	0	0	0
+42@csharp.g:552:3(namespaceBody)	1	1.00	1	0	0	0
+43@csharp.g:553:3(namespaceBody)	1	1.00	1	0	0	0
+74@csharp.g:755:5(typeDeclarationLeadin)	204	1.00	1	0	0	0
+188@csharp.g:1925:5(attributes)	672	1.00	1	0	0	0
+190@csharp.g:1937:4(attrSectionElement)	504	2.00	2	0	0	0
+193@csharp.g:1950:4(attributeParam)	504	2.00	2	504	0	1
+168@csharp.g:1682:1(assignExpr)	4206	1.04	2	163	0	1
+125@csharp.g:1197:1(unaryPrefix)	4491	1.02	8	37	0	1
+133@csharp.g:1304:1(primaryAtom)	6338	1.00	1	0	0	0
+137@csharp.g:1391:3(qualifiedAliasMember)	4710	1.00	1	0	0	0
+132@csharp.g:1248:6(primaryElement)	7840	1.01	9	1502	39	1
+131@csharp.g:1252:25(primaryElement)	1464	1.00	1	0	0	0
+155@csharp.g:1567:1(argument)	1504	1.00	1	0	0	0
+124@csharp.g:1200:19(unaryPrefix)	6338	1.00	1	0	0	0
+122@csharp.g:1189:16(primaryUnit)	4476	1.00	1	0	0	0
+183@csharp.g:1830:12(multExpr)	4467	1.00	1	0	0	0
+182@csharp.g:1819:13(addExpr)	4462	1.00	1	0	0	0
+180@csharp.g:1808:12(shiftExpr)	4230	1.00	2	0	0	0
+179@csharp.g:1782:4(relTypeExpr)	4230	1.00	2	0	0	0
+177@csharp.g:1752:16(equExpr)	4197	1.00	1	0	0	0
+176@csharp.g:1746:12(landExpr)	4057	1.00	1	0	0	0
+175@csharp.g:1740:13(lxorExpr)	4057	1.00	1	0	0	0
+174@csharp.g:1734:13(lorExpr)	4057	1.00	1	0	0	0
+173@csharp.g:1728:12(candExpr)	4057	1.00	1	0	0	0
+172@csharp.g:1722:13(corExpr)	4047	1.00	1	0	0	0
+171@csharp.g:1716:12(nullCoExpr)	4044	1.00	1	0	0	0
+170@csharp.g:1710:15(condExpr)	4044	1.00	2	1	0	1
+167@csharp.g:1694:3(assignExpr)	4043	1.05	2	197	0	1
+154@csharp.g:1557:16(argumentList)	1504	1.00	1	0	0	0
+192@csharp.g:1946:19(attributeList)	504	1.00	1	0	0	0
+191@csharp.g:1937:91(attrSectionElement)	504	1.00	1	0	0	0
+75@csharp.g:755:18(typeDeclarationLeadin)	414	1.00	1	210	0	1
+50@csharp.g:603:1(typeDeclarationNoAttrs)	2	1.00	1	0	0	0
+76@csharp.g:768:3(classDeclaration)	2	1.00	1	0	0	0
+77@csharp.g:769:3(classDeclaration)	2	1.00	1	0	0	0
+203@csharp.g:2126:4(nonArrayType)	2249	1.00	1	0	0	0
+205@csharp.g:2128:4(nonArrayType)	2249	1.00	1	0	0	0
+202@csharp.g:2106:4(type)	2160	1.01	2	0	0	0
+80@csharp.g:783:16(classBase)	1	1.00	1	0	0	0
+78@csharp.g:770:3(classDeclaration)	2	1.00	1	0	0	0
+81@csharp.g:789:3(classBody)	205	1.00	1	0	0	0
+82@csharp.g:802:1(classTypeStuff)	203	1.00	1	0	0	0
+96@csharp.g:854:1(commonMemberDeclaration)	202	1.00	1	0	0	0
+95@csharp.g:860:4(commonMemberDeclaration)	202	1.00	1	0	0	0
+94@csharp.g:868:10(commonMemberDeclaration)	202	1.00	1	0	0	0
+91@csharp.g:880:9(commonMemberDeclaration)	6	1.00	1	0	0	0
+121@csharp.g:1159:1(variableInitializer)	35	1.00	1	0	0	1
+89@csharp.g:883:11(commonMemberDeclaration)	3	1.00	1	0	0	0
+90@csharp.g:891:11(commonMemberDeclaration)	3	1.00	1	0	0	0
+216@csharp.g:2281:1(simpleType)	270	1.00	1	0	0	0
+88@csharp.g:872:16(commonMemberDeclaration)	196	1.00	1	0	0	0
+110@csharp.g:1100:4(methodHeader)	196	1.00	1	0	0	1
+111@csharp.g:1100:20(methodHeader)	196	1.00	1	0	0	0
+112@csharp.g:1104:4(methodHeader)	196	1.00	1	0	0	0
+109@csharp.g:1091:1(methodBody)	196	1.00	1	0	0	0
+37@csharp.g:527:5(block)	299	1.00	1	0	0	0
+38@csharp.g:527:22(block)	299	1.00	1	0	0	0
+39@csharp.g:533:4(statementList)	1509	1.00	2	0	0	0
+5@csharp.g:201:1(statement)	1207	3.19	9	2185	28	1
+218@csharp.g:208:6(statement)	1110	1.00	1	0	0	0
+6@csharp.g:218:1(declarationStatement)	356	1.00	1	0	0	0
+10@csharp.g:255:4(localVariableDeclarator)	374	1.00	1	0	0	0
+11@csharp.g:264:1(localVariableInitializer)	371	1.01	2	2	0	1
+220@csharp.g:1683:10(assignExpr)	163	2.00	2	0	0	0
+157@csharp.g:1601:10(fromClause)	172	2.00	2	0	0	0
+158@csharp.g:1605:7(queryBody)	177	1.00	1	0	0	0
+160@csharp.g:1616:4(queryBodyClauses)	240	1.00	1	0	0	0
+161@csharp.g:1619:1(queryBodyClause)	127	1.00	1	0	0	0
+166@csharp.g:1658:1(selectOrGroupClause)	177	1.00	1	0	0	0
+159@csharp.g:1606:4(queryBody)	177	1.08	2	14	0	1
+8@csharp.g:236:38(localVariableDeclaration)	374	1.00	1	0	0	0
+12@csharp.g:270:1(embeddedStatement)	941	1.08	2	77	0	1
+13@csharp.g:280:1(embeddedSingleStatement)	864	1.00	1	0	0	0
+178@csharp.g:1783:6(relTypeExpr)	33	1.00	1	0	0	0
+148@csharp.g:1468:3(newExpressions)	133	1.00	1	0	0	0
+147@csharp.g:1471:5(newExpressions)	89	1.11	2	0	0	0
+145@csharp.g:1492:17(newExpressions)	69	1.00	1	0	0	0
+146@csharp.g:1492:39(newExpressions)	69	1.22	2	15	0	1
+126@csharp.g:1203:1(prefixOps)	8	1.00	1	0	0	0
+169@csharp.g:1701:1(assignmentOperator)	394	1.00	1	0	0	0
+149@csharp.g:1516:12(objectOrCollectionInitializer)	69	1.00	1	0	0	0
+152@csharp.g:1528:1(memberInitializer)	200	2.00	2	200	0	1
+153@csharp.g:1539:1(initializerExpression)	200	1.00	1	0	0	1
+150@csharp.g:1522:22(memberInitializerList)	200	1.65	2	0	0	0
+151@csharp.g:1522:55(memberInitializerList)	69	1.00	1	0	0	0
+114@csharp.g:1123:4(formalParameter)	39	1.00	1	0	0	0
+115@csharp.g:1125:3(formalParameter)	39	1.00	1	0	0	0
+117@csharp.g:1125:25(formalParameter)	39	1.00	1	0	0	0
+116@csharp.g:1126:17(formalParameter)	34	1.00	1	0	0	0
+113@csharp.g:1114:23(formalParameterList)	9	1.00	1	0	0	0
+32@csharp.g:470:1(selectionStatement)	16	1.00	1	0	0	0
+33@csharp.g:482:3(switchBlock)	4	1.00	1	0	0	0
+34@csharp.g:488:6(switchSection)	6	1.17	2	0	0	0
+35@csharp.g:495:3(switchLable)	3	1.00	1	0	0	0
+21@csharp.g:388:1(jumpStatement)	4	1.00	1	0	0	0
+23@csharp.g:401:12(returnStatement)	4	1.00	1	0	0	0
+134@csharp.g:1344:3(precAnonymous)	29	1.00	1	0	0	0
+136@csharp.g:1375:1(precAnonExpressions)	29	2.90	7	27	0	1
+184@csharp.g:1849:3(identifier)	42	1.00	1	0	0	0
+219@csharp.g:1376:21(precAnonExpressions)	23	1.00	1	0	0	0
+164@csharp.g:1647:10(joinClause)	8	2.00	2	0	0	0
+165@csharp.g:1647:76(joinClause)	8	1.00	1	0	0	0
+217@csharp.g:2290:1(numericType)	60	1.00	1	0	0	0
+163@csharp.g:1636:18(ordering)	12	1.00	1	0	0	0
+162@csharp.g:1632:13(orderings)	12	1.00	1	0	0	0
+25@csharp.g:422:1(iterationStatement)	55	1.00	1	0	0	0
+207@csharp.g:2161:4(rankSpecifiers)	56	2.00	3	28	0	1
+208@csharp.g:2168:13(rankSpecifier)	56	1.00	1	0	0	0
+210@csharp.g:2175:3(arrayInitializer)	11	1.00	1	0	0	0
+120@csharp.g:1156:24(variableInitializerList)	32	1.66	2	0	0	0
+209@csharp.g:2175:30(arrayInitializer)	11	1.00	1	0	0	0
+135@csharp.g:1378:22(precAnonExpressions)	2	1.00	1	0	0	0
+196@csharp.g:2020:9(typeArguments)	104	1.00	1	0	0	0
+36@csharp.g:511:3(ifStatement)	15	1.73	2	11	0	1
+16@csharp.g:342:1(resourceAcquisition)	9	2.00	2	9	0	1
+17@csharp.g:371:4(tryStatement)	26	1.00	1	0	0	0
+20@csharp.g:382:3(catchClause)	13	1.00	1	0	0	0
+19@csharp.g:383:17(catchClause)	13	1.00	1	0	0	0
+18@csharp.g:371:19(tryStatement)	13	1.00	1	0	0	0
+130@csharp.g:1235:1(expressionOrCommaList)	13	1.00	1	0	0	0
+156@csharp.g:1577:18(expressionList)	15	1.00	1	0	0	0
+142@csharp.g:1437:8(typeof)	29	1.00	1	0	0	0
+143@csharp.g:1488:44(newExpressions)	2	1.00	1	0	0	1
+144@csharp.g:1488:76(newExpressions)	2	1.50	2	1	0	1
+26@csharp.g:442:4(forStatement)	9	1.00	1	0	0	0
+31@csharp.g:453:1(forInitializer)	9	2.00	2	9	0	1
+27@csharp.g:442:25(forStatement)	9	1.00	1	0	0	0
+28@csharp.g:442:42(forStatement)	9	1.00	1	0	0	0
+123@csharp.g:1192:1(unaryPostOps)	9	1.00	1	0	0	0
+29@csharp.g:450:15(forIterator)	9	1.00	1	0	0	0
+79@csharp.g:773:7(classDeclaration)	2	1.00	1	0	0	0
+40@csharp.g:545:21(namespaceDeclaration)	1	1.00	1	0	0	0
+
+      Parsed in 1307ms.
+
+~/research/papers/LL-star/ANTLR-grammars-private/csharp/ter $ vi /tmp/j
+~/research/papers/LL-star/ANTLR-grammars-private/csharp/ter $ grep '@' /tmp/j | awk 'BEGIN {FS="\t"}; {print "k=" $4}'|sort |uniq -c |sort -r -n # dec maxk histo
+ 114 k=1
+  26 k=2
+   2 k=9
+   1 k=8
+   1 k=7
+   1 k=4
+   1 k=3
+~/research/papers/LL-star/ANTLR-grammars-private/csharp/ter $ awk 'BEGIN {FS="\t"}; {if ($7>0 && $5==0 ) print $0}' /tmp/j # those that can backtrack but don't
+3@csharp.g:193:3(compilationUnit)	1	1.00	1	0	0	1
+121@csharp.g:1159:1(variableInitializer)	35	1.00	1	0	0	1
+110@csharp.g:1100:4(methodHeader)	196	1.00	1	0	0	1
+153@csharp.g:1539:1(initializerExpression)	200	1.00	1	0	0	1
+143@csharp.g:1488:44(newExpressions)	2	1.00	1	0	0	1
+
+SPEED
+
+~/research/papers/LL-star/ANTLR-grammars-private/csharp/ter $ j Main tests/LinqSamples/SampleQueries/LinqToSqlSamples.cs # parse, lex time, reloading from disk
+warm up
+[temp] Unknown character '?' (0xfeff) Unicode glyph?
+[temp] Unknown character '?' (0xfeff) Unicode glyph?
+[temp] Unknown character '?' (0xfeff) Unicode glyph?
+[temp] Unknown character '?' (0xfeff) Unicode glyph?
+[temp] Unknown character '?' (0xfeff) Unicode glyph?
+...
+parse
+[temp] Unknown character '?' (0xfeff) Unicode glyph?
+      Parsed in 206ms.
+[temp] Unknown character '?' (0xfeff) Unicode glyph?
+      Parsed in 204ms.
+[temp] Unknown character '?' (0xfeff) Unicode glyph?
+      Parsed in 195ms.
+[temp] Unknown character '?' (0xfeff) Unicode glyph?
+      Parsed in 202ms.
+[temp] Unknown character '?' (0xfeff) Unicode glyph?
+      Parsed in 201ms.
+[temp] Unknown character '?' (0xfeff) Unicode glyph?
+      Parsed in 197ms.
+[temp] Unknown character '?' (0xfeff) Unicode glyph?
+      Parsed in 203ms.
+[temp] Unknown character '?' (0xfeff) Unicode glyph?
+      Parsed in 201ms.
+[temp] Unknown character '?' (0xfeff) Unicode glyph?
+      Parsed in 195ms.
+[temp] Unknown character '?' (0xfeff) Unicode glyph?
+      Parsed in 203ms.

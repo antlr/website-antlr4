@@ -1,0 +1,205 @@
+STATIC ANALYSIS
+
+~/antlr/code/examples-v3/java/java $ wc -l *.g
+    1022 Java.g
+
+~/antlr/code/examples-v3/java/java $ time a -report Java.g > /tmp/j
+
+real	0m3.133s
+user	0m6.729s
+sys	0m0.562s
+~/antlr/code/examples-v3/java/java $ cat /tmp/j|awk '{print $4 " " $5 " " $6}' |sort |uniq -c |sort -r -n|more
+ 127 k=1  
+  20 k=2  
+  14 k=1 backtracks 
+   3 k=2 backtracks 
+   2 k=3  
+   1 k=4  
+   1 k=3 backtracks 
+   1 cyclic backtracks 
+   1 backtracks  
+
+~/antlr/code/examples-v3/java/java $ wc -l /tmp/j
+     170 /tmp/j
+
+PARSE-TIME
+
+~/antlr/code/examples-v3/java/java $ j -Xmx600M Main RatsJavaParser.java 
+ANTLR Runtime Report; Profile Version 3
+parser name JavaParser
+Number of rule invocations 401702
+Number of unique rules visited 84
+Number of decision events 462975
+Overall average k per decision event 1.0908127
+Number of backtracking occurrences (can be multiple per decision) 10937
+Overall average k per decision event that backtracks 3.9485233
+Number of rule invocations while backtracking 94328
+num decisions that potentially backtrack 19
+num decisions that do backtrack 16
+num decisions that potentially backtrack but don't 3
+average % of time a potentially backtracking decision backtracks 45.218136
+num unique decisions covered 111
+max rule invocation nesting depth 98
+rule memoization cache size 95639
+number of rule memoization cache hits 1311
+number of rule memoization cache misses 94328
+number of tokens 65236
+number of hidden tokens 28140
+number of char 0
+number of hidden char 0
+number of syntax errors 0
+
+location	n	avgk	maxk	synpred	sempred	canbacktrack
+8@Java.g:179:1(compilationUnit)	1	1.00	1	0	0	1
+5@Java.g:184:9(compilationUnit)	1	1.00	1	0	0	0
+6@Java.g:184:29(compilationUnit)	9	1.00	1	0	0	0
+9@Java.g:192:18(importDeclaration)	8	1.00	1	0	0	0
+86@Java.g:504:20(qualifiedName)	146	1.13	2	0	0	0
+10@Java.g:192:42(importDeclaration)	8	1.00	1	0	0	0
+7@Java.g:184:48(compilationUnit)	2	1.00	1	0	0	0
+11@Java.g:195:1(typeDeclaration)	1	1.00	1	0	0	0
+13@Java.g:205:9(classOrInterfaceModifiers)	2	1.00	1	0	0	0
+14@Java.g:208:1(classOrInterfaceModifier)	1	1.00	1	0	0	0
+12@Java.g:201:35(classOrInterfaceDeclaration)	1	1.00	1	0	0	0
+16@Java.g:223:1(classDeclaration)	14	1.00	1	0	0	0
+17@Java.g:229:28(normalClassDeclaration)	14	1.00	1	0	0	0
+18@Java.g:230:9(normalClassDeclaration)	14	1.00	1	0	0	0
+69@Java.g:438:1(type)	6152	1.00	1	0	0	0
+70@Java.g:444:15(classOrInterfaceType)	5537	1.00	1	0	0	0
+72@Java.g:444:30(classOrInterfaceType)	7806	1.00	1	0	0	0
+67@Java.g:439:25(type)	5034	1.00	1	0	0	0
+19@Java.g:231:9(normalClassDeclaration)	14	1.00	1	0	0	0
+36@Java.g:281:13(classBody)	958	1.00	1	0	0	0
+39@Java.g:288:1(classBodyDeclaration)	944	1.21	2	0	0	0
+15@Java.g:220:9(modifiers)	3240	1.00	1	0	0	0
+66@Java.g:411:1(modifier)	2309	1.00	1	0	0	0
+40@Java.g:294:1(memberDecl)	931	1.60	2	0	0	0
+41@Java.g:304:14(memberDeclaration)	770	2.00	2	0	0	0
+61@Java.g:399:20(variableDeclaratorId)	2031	1.00	1	0	0	0
+58@Java.g:387:30(variableDeclarator)	1724	1.00	1	0	0	0
+62@Java.g:402:1(variableInitializer)	2978	1.00	1	0	0	0
+142@Java.g:817:1(unaryExpression)	18655	1.00	1	0	0	0
+145@Java.g:825:1(unaryExpressionNotPlusMinus)	18677	1.09	114	467	124	1
+153@Java.g:837:1(primary)	18572	1.00	1	0	0	0
+158@Java.g:859:1(creator)	955	1.00	1	0	0	0
+159@Java.g:864:1(createdName)	955	1.00	1	0	0	0
+157@Java.g:861:21(creator)	955	1.00	1	0	0	0
+164@Java.g:875:9(arrayCreatorRest)	440	1.00	1	0	0	0
+161@Java.g:875:17(arrayCreatorRest)	425	1.00	1	0	0	0
+65@Java.g:408:13(arrayInitializer)	438	1.00	1	0	0	0
+87@Java.g:507:1(literal)	7174	1.00	1	0	0	0
+143@Java.g:829:17(unaryExpressionNotPlusMinus)	18561	1.00	1	0	0	0
+144@Java.g:829:27(unaryExpressionNotPlusMinus)	18559	1.00	1	0	0	0
+141@Java.g:814:25(multiplicativeExpression)	18559	1.00	1	0	0	0
+140@Java.g:810:34(additiveExpression)	18559	1.00	1	0	0	0
+138@Java.g:791:28(shiftExpression)	18503	1.04	2	0	0	0
+136@Java.g:776:25(relationalExpression)	18503	1.04	2	0	0	0
+135@Java.g:772:30(instanceOfExpression)	17721	1.00	1	0	0	0
+134@Java.g:768:30(equalityExpression)	17721	1.00	1	0	0	0
+133@Java.g:764:28(andExpression)	17375	1.00	1	0	0	0
+132@Java.g:760:23(exclusiveOrExpression)	17375	1.00	1	0	0	0
+131@Java.g:756:31(inclusiveOrExpression)	17375	1.00	1	0	0	0
+130@Java.g:752:31(conditionalAndExpression)	17375	1.00	1	0	0	0
+129@Java.g:748:34(conditionalOrExpression)	17107	1.00	1	0	0	0
+128@Java.g:744:33(conditionalExpression)	16938	1.00	1	0	0	0
+126@Java.g:711:31(expression)	16938	1.00	1	0	0	0
+63@Java.g:408:34(arrayInitializer)	1267	1.65	2	0	0	0
+64@Java.g:408:61(arrayInitializer)	438	1.00	1	0	0	0
+57@Java.g:383:28(variableDeclarators)	1724	1.00	1	0	0	0
+68@Java.g:440:18(type)	1239	1.00	1	0	0	0
+78@Java.g:477:13(formalParameters)	180	1.00	1	0	0	0
+47@Java.g:347:26(methodDeclaratorRest)	32	1.00	1	0	0	0
+48@Java.g:348:9(methodDeclaratorRest)	32	1.00	1	0	0	0
+49@Java.g:349:9(methodDeclaratorRest)	32	1.00	1	0	0	0
+105@Java.g:599:13(block)	8976	1.00	1	0	0	0
+106@Java.g:602:1(blockStatement)	7565	2.67	17	4806	0	1
+114@Java.g:620:1(statement)	8704	1.49	2	0	0	0
+111@Java.g:634:18(statement)	776	1.00	1	0	0	0
+150@Java.g:843:20(primary)	13815	1.57	3	3970	0	1
+151@Java.g:843:38(primary)	9845	1.04	4	116	0	1
+50@Java.g:355:26(voidMethodDeclaratorRest)	132	1.00	1	0	0	0
+51@Java.g:356:9(voidMethodDeclaratorRest)	132	1.00	1	0	0	0
+107@Java.g:617:9(variableModifiers)	5123	1.00	1	0	0	0
+80@Java.g:484:1(formalParameterDeclsRest)	49	1.00	1	0	0	0
+79@Java.g:485:30(formalParameterDeclsRest)	49	1.00	1	0	0	0
+56@Java.g:375:26(constructorDeclaratorRest)	16	1.00	1	0	0	0
+81@Java.g:494:13(constructorBody)	16	5.56	16	16	0	1
+85@Java.g:497:1(explicitConstructorInvocation)	19	5.26	16	19	0	1
+184@Java.g:498:9(explicitConstructorInvocation)	19	1.00	1	0	0	0
+170@Java.g:906:13(arguments)	5397	1.00	1	0	0	0
+125@Java.g:699:20(expressionList)	6060	1.00	1	0	0	0
+165@Java.g:881:19(classCreatorRest)	515	1.00	1	0	0	0
+83@Java.g:498:9(explicitConstructorInvocation)	6	1.00	1	0	0	0
+82@Java.g:494:44(constructorBody)	139	1.00	1	0	0	0
+147@Java.g:832:1(castExpression)	327	2.00	2	327	0	1
+146@Java.g:834:12(castExpression)	327	1.81	4	245	0	1
+71@Java.g:444:46(classOrInterfaceType)	2269	1.00	1	0	0	0
+156@Java.g:848:1(identifierSuffix)	5104	1.05	2	0	0	0
+148@Java.g:839:16(primary)	281	1.95	3	134	0	1
+149@Java.g:839:34(primary)	147	1.00	1	0	0	1
+127@Java.g:714:1(assignmentOperator)	610	1.00	1	0	0	0
+162@Java.g:876:28(arrayCreatorRest)	15	1.87	2	13	0	1
+163@Java.g:876:50(arrayCreatorRest)	28	1.46	2	0	0	0
+167@Java.g:892:1(selector)	2	2.00	2	0	0	0
+166@Java.g:893:24(selector)	2	1.00	1	0	0	0
+155@Java.g:850:9(identifierSuffix)	464	2.00	3	232	0	1
+169@Java.g:900:1(superSuffix)	2	1.00	1	0	0	0
+168@Java.g:902:24(superSuffix)	2	1.00	1	0	0	0
+77@Java.g:473:23(qualifiedNameList)	121	1.00	1	0	0	0
+109@Java.g:623:38(statement)	1369	3.10	109	112	12	1
+137@Java.g:779:1(relationalOp)	782	2.00	2	0	0	0
+110@Java.g:628:9(statement)	389	12.99	41	151	0	1
+116@Java.g:656:9(switchBlockStatementGroups)	358	1.00	1	0	0	0
+117@Java.g:664:9(switchBlockStatementGroup)	553	1.99	3	290	0	1
+119@Java.g:667:1(switchLabel)	580	1.95	4	26	0	1
+118@Java.g:664:22(switchBlockStatementGroup)	1284	1.00	1	0	0	0
+112@Java.g:636:17(statement)	261	1.00	1	0	0	0
+115@Java.g:644:21(catches)	258	1.00	1	0	0	0
+38@Java.g:290:9(classBodyDeclaration)	13	1.00	1	0	0	0
+123@Java.g:673:1(forControl)	13	3.00	3	0	0	1
+120@Java.g:676:9(forControl)	13	1.00	1	0	0	0
+124@Java.g:679:1(forInit)	13	5.00	5	13	0	1
+121@Java.g:676:22(forControl)	13	1.00	1	0	0	0
+122@Java.g:676:38(forControl)	13	1.00	1	0	0	0
+
+~/antlr/code/examples-v3/java/java $ grep '@' /tmp/java | awk 'BEGIN {FS="\t"}; {print "k=" $4}'|sort |uniq -c |sort -r -n # dec maxk histo
+  82 k=1
+  14 k=2
+   5 k=3
+   3 k=4
+   2 k=16
+   1 k=5
+   1 k=41
+   1 k=17
+   1 k=114
+   1 k=109
+
+~/antlr/code/examples-v3/java/java $ awk 'BEGIN {FS="\t"}; {if ($7>0 && $5==0 ) print $0}' /tmp/java # those that can backtrack but don't
+8@Java.g:179:1(compilationUnit)	1	1.00	1	0	0	1
+149@Java.g:839:34(primary)	147	1.00	1	0	0	1
+123@Java.g:673:1(forControl)	13	3.00	3	0	0	1
+
+SPEED
+
+~/antlr/code/examples-v3/java/java $ wc RatsJavaParser.java 
+    9100   26528  348973 RatsJavaParser.java
+
+~/antlr/code/examples-v3/java/java $ j TestJava RatsJavaParser.java
+parsing /Users/parrt/antlr/code/examples-v3/java/java/RatsJavaParser.java
+warm up 100 times
+parse
+      Parsed in 106ms.
+      Parsed in 97ms.
+      Parsed in 93ms.
+      Parsed in 126ms.
+      Parsed in 96ms.
+      Parsed in 83ms.
+      Parsed in 99ms.
+      Parsed in 89ms.
+      Parsed in 122ms.
+      Parsed in 98ms.
+
+(106+97+93+126+96+83+99+122+98)/10
+92
+
+12416 / .092 = 134956.52 lines/sec

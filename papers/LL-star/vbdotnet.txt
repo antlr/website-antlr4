@@ -1,0 +1,286 @@
+STATIC ANALYSIS
+
+~/research/papers/LL-star/ANTLR-grammars-private/vbdotnet/java/src/main/antlr/com/temporalwave/parsers/vbdotnet $ wc -l *.g
+    3505 vbdotnet.g
+
+~/research/papers/LL-star/ANTLR-grammars-private/vbdotnet/java/src/main/antlr/com/temporalwave/parsers/vbdotnet $ time a -report vbdotnet.g > /tmp/j
+
+real	0m6.758s
+user	0m15.509s
+sys	0m1.834s
+
+$ cat /tmp/j|awk '{print $4 " " $5 " " $6}' |sort |uniq -c |sort -r -n|more
+ 298 k=1  
+  18 k=2  
+  14 k=1 backtracks 
+  11 k=1 sempred 
+   4 k=3  
+   2 k=2 backtracks 
+   1 k=4  
+
+$ wc -l /tmp/j
+     348 /tmp/j
+
+PARSE-TIME
+
+from VS help samples
+
+http://code.msdn.microsoft.com/vb2008samples
+
+~/research/papers/LL-star/ANTLR-grammars-private/vbdotnet/ter $ wc -l ./tests/Northwind.vb
+    4649 ./tests/Northwind.vb
+
+~/research/papers/LL-star/ANTLR-grammars-private/vbdotnet/ter $ j Main ./tests/Northwind.vb
+    Pre-Processor Lexer Start
+      lexed in 3ms.
+    Pre-Processor Parser Start
+      Parsed in 283ms.
+Unknown character '?' at line 1, offset 1 is ignored.
+    Lexer Start
+      lexed in 0ms.
+    Parser Start
+ANTLR Runtime Report; Profile Version 3
+parser name vbdotnetParser
+Number of rule invocations 76188
+Number of unique rules visited 128
+Number of decision events 109257
+Overall average k per decision event 1.066458
+Number of backtracking occurrences (can be multiple per decision) 500
+Overall average k per decision event that backtracks 3.252
+Number of rule invocations while backtracking 0
+num decisions that potentially backtrack 6
+num decisions that do backtrack 3
+num decisions that potentially backtrack but don't 3
+average % of time a potentially backtracking decision backtracks 20.83951
+num unique decisions covered 166
+max rule invocation nesting depth 100
+rule memoization cache size 0
+number of rule memoization cache hits 0
+number of rule memoization cache misses 0
+number of tokens 23771
+number of hidden tokens 11906
+number of char 0
+number of hidden char 0
+number of syntax errors 0
+
+location	n	avgk	maxk	synpred	sempred	canbacktrack
+1@vbdotnet.g:243:5(compilation_unit)	11	1.00	1	0	0	0
+4@vbdotnet.g:261:4(optionStatements)	3	1.00	1	0	0	0
+5@vbdotnet.g:285:17(optionStatement)	5	1.00	1	0	0	0
+6@vbdotnet.g:293:4(importStatements)	10	1.00	1	0	0	0
+7@vbdotnet.g:302:4(importsStatement)	9	2.00	2	0	0	0
+9@vbdotnet.g:308:1(importTarget)	9	1.00	1	0	0	0
+344@vbdotnet.g:2530:1(identifier)	4346	1.00	1	0	0	0
+324@vbdotnet.g:2294:17(qualifiedIdentifier)	23	1.00	1	0	0	0
+325@vbdotnet.g:2296:3(qualifiedIdentifier)	10	1.00	1	0	0	0
+8@vbdotnet.g:304:3(importsStatement)	19	1.00	1	0	0	0
+323@vbdotnet.g:2294:23(qualifiedIdentifier)	13	1.00	1	0	0	0
+3@vbdotnet.g:253:3(compilation_unit)	1	1.00	1	0	0	1
+23@vbdotnet.g:368:4(namespaceMemberDeclaration)	25	1.00	1	0	0	0
+24@vbdotnet.g:374:1(sourceStatement)	23	1.00	1	0	0	0
+25@vbdotnet.g:380:42(namespaceDeclaration)	3	1.00	1	0	0	0
+28@vbdotnet.g:408:4(typeDeclarationLeadIn)	22	1.00	1	0	0	0
+29@vbdotnet.g:410:3(typeDeclarationLeadIn)	22	1.00	1	0	0	0
+326@vbdotnet.g:2400:3(allAccessModifiers)	2285	1.00	1	0	0	0
+27@vbdotnet.g:390:3(typeDeclaration)	22	1.00	1	0	0	0
+53@vbdotnet.g:511:1(nonModuleDeclaration)	22	1.00	1	0	0	0
+118@vbdotnet.g:811:22(classDeclaration)	22	1.00	1	0	0	0
+119@vbdotnet.g:811:40(classDeclaration)	44	1.00	1	0	0	0
+120@vbdotnet.g:813:3(classDeclaration)	22	1.00	1	0	0	0
+306@vbdotnet.g:2160:1(typeNameNoArray)	989	1.00	1	0	0	0
+307@vbdotnet.g:2166:15(constructType)	585	1.31	3	0	0	0
+303@vbdotnet.g:2161:18(typeNameNoArray)	955	1.77	3	370	0	1
+308@vbdotnet.g:2171:4(cunstructKeyType)	370	1.00	1	0	0	0
+309@vbdotnet.g:2171:25(cunstructKeyType)	370	1.36	3	0	0	0
+304@vbdotnet.g:2161:51(typeNameNoArray)	585	1.00	1	0	0	0
+302@vbdotnet.g:2147:4(typeName)	879	1.01	2	0	0	0
+127@vbdotnet.g:848:23(classBase)	3	1.00	1	0	0	0
+121@vbdotnet.g:814:3(classDeclaration)	43	1.00	1	0	0	0
+122@vbdotnet.g:815:3(classDeclaration)	896	1.00	1	0	0	0
+124@vbdotnet.g:825:8(classMemberDeclaration)	874	1.00	1	0	0	0
+125@vbdotnet.g:825:21(classMemberDeclaration)	874	1.00	1	0	0	0
+126@vbdotnet.g:836:1(cmdMembers)	874	1.55	2	0	0	0
+129@vbdotnet.g:863:1(methodMemberDeclaration)	455	1.00	1	0	0	0
+138@vbdotnet.g:905:1(methodDeclaration)	455	1.00	1	0	0	0
+139@vbdotnet.g:920:20(subDeclaration)	455	2.00	2	0	0	0
+140@vbdotnet.g:920:39(subDeclaration)	455	1.00	1	0	0	0
+328@vbdotnet.g:2429:12(parenParameterList)	655	1.00	1	0	0	0
+141@vbdotnet.g:922:3(subDeclaration)	455	1.00	1	0	0	0
+142@vbdotnet.g:922:24(subDeclaration)	910	1.00	1	0	68	0
+144@vbdotnet.g:927:3(subDeclaration)	455	1.85	2	0	455	0
+157@vbdotnet.g:991:4(block)	2434	1.43	2	0	0	0
+143@vbdotnet.g:930:17(subDeclaration)	979	1.00	1	0	0	0
+329@vbdotnet.g:2443:4(parameterSpec)	244	1.00	1	0	0	0
+330@vbdotnet.g:2443:16(parameterSpec)	295	1.00	1	0	0	0
+333@vbdotnet.g:2450:15(parameterIdentifier)	244	1.00	1	0	0	0
+331@vbdotnet.g:2445:3(parameterSpec)	244	1.00	1	0	0	0
+332@vbdotnet.g:2446:3(parameterSpec)	244	1.00	1	0	0	0
+327@vbdotnet.g:2425:14(parameterList)	244	1.00	1	0	0	0
+105@vbdotnet.g:771:13(constructorMemberDeclaration)	23	1.00	1	0	0	0
+319@vbdotnet.g:2227:1(builtInTypeName)	446	1.00	1	0	0	0
+320@vbdotnet.g:2232:1(primitiveTypeName)	446	1.00	1	0	0	0
+305@vbdotnet.g:2162:20(typeNameNoArray)	404	1.00	1	0	0	0
+106@vbdotnet.g:771:33(constructorMemberDeclaration)	46	1.00	1	0	0	0
+160@vbdotnet.g:1003:1(labeledLine)	1386	1.05	2	75	0	1
+163@vbdotnet.g:1047:1(statement)	1386	1.00	1	0	0	0
+279@vbdotnet.g:1901:1(lvalues)	917	1.08	2	0	75	0
+290@vbdotnet.g:2023:1(compoundFirst)	3068	1.20	2	0	1246	0
+291@vbdotnet.g:2053:1(cfKey)	2054	1.30	2	0	1246	0
+287@vbdotnet.g:2024:16(compoundFirst)	2054	1.00	1	0	0	0
+289@vbdotnet.g:2025:5(compoundFirst)	2054	1.00	1	0	0	0
+282@vbdotnet.g:1961:5(compoundElement)	4589	1.00	1	0	0	0
+297@vbdotnet.g:2079:1(compoundSubsequent)	1521	1.98	2	0	2966	0
+298@vbdotnet.g:2104:1(cskid)	1521	1.00	1	0	0	0
+293@vbdotnet.g:2080:16(compoundSubsequent)	1521	1.25	2	0	0	0
+295@vbdotnet.g:2081:4(compoundSubsequent)	1521	1.00	1	0	0	0
+294@vbdotnet.g:2082:5(compoundSubsequent)	710	1.00	1	0	0	0
+340@vbdotnet.g:2505:13(anyArgumentList)	452	1.00	1	0	0	0
+343@vbdotnet.g:2514:1(argument)	509	1.40	2	0	0	0
+241@vbdotnet.g:1675:1(expression_tree)	1718	1.00	1	0	0	0
+242@vbdotnet.g:1686:1(exprTreeMain)	1718	1.00	1	0	0	0
+250@vbdotnet.g:1726:1(not_expr)	2151	1.00	1	0	0	0
+260@vbdotnet.g:1771:1(unary_arith_expr)	2151	1.00	1	0	0	0
+265@vbdotnet.g:1790:1(primary)	2203	1.00	1	0	0	0
+283@vbdotnet.g:1964:5(compoundElement)	3068	1.00	1	0	0	0
+284@vbdotnet.g:1968:5(compoundElement)	3068	1.00	1	0	0	0
+286@vbdotnet.g:1978:3(compoundElement)	3068	1.00	1	0	0	0
+262@vbdotnet.g:1785:12(exp_expression)	2151	1.00	1	0	0	0
+259@vbdotnet.g:1764:21(mult_expr)	2151	1.00	1	0	0	0
+257@vbdotnet.g:1758:14(intdiv_expr)	2151	1.00	1	0	0	0
+256@vbdotnet.g:1752:16(mod_expr)	2151	1.00	1	0	0	0
+255@vbdotnet.g:1746:13(add_expr)	2151	1.00	1	0	0	0
+253@vbdotnet.g:1740:13(cat_expr)	2151	1.00	1	0	0	0
+252@vbdotnet.g:1735:13(shift_expr)	2151	1.00	1	0	0	0
+249@vbdotnet.g:1709:3(relational_expr)	2151	1.00	1	0	0	0
+247@vbdotnet.g:1704:20(and_expr)	1731	1.00	1	0	0	0
+245@vbdotnet.g:1700:13(or_expr)	1731	1.00	1	0	0	0
+243@vbdotnet.g:1696:12(xor_expr)	1718	1.00	1	0	0	0
+342@vbdotnet.g:2511:13(arguments)	509	1.00	1	0	0	0
+341@vbdotnet.g:2511:20(arguments)	57	1.00	1	0	0	0
+220@vbdotnet.g:1437:3(assignStatement)	917	1.00	1	0	0	0
+162@vbdotnet.g:1032:12(statements)	1386	1.00	1	0	0	1
+159@vbdotnet.g:1013:20(labeledLine)	2772	1.00	1	0	0	0
+161@vbdotnet.g:1019:1(labelName)	75	1.00	1	0	0	0
+107@vbdotnet.g:775:14(constructorMemberDeclaration)	69	1.00	1	0	0	0
+38@vbdotnet.g:468:25(propertyMemberDeclaration)	177	1.00	1	0	0	0
+39@vbdotnet.g:470:3(propertyMemberDeclaration)	177	1.00	1	0	0	0
+281@vbdotnet.g:1937:16(gqTypeList)	157	1.00	1	0	0	0
+40@vbdotnet.g:471:3(propertyMemberDeclaration)	177	1.00	1	0	0	0
+41@vbdotnet.g:473:3(propertyMemberDeclaration)	354	1.00	1	0	0	0
+46@vbdotnet.g:474:3(propertyMemberDeclaration)	177	1.00	1	0	177	0
+44@vbdotnet.g:480:5(propertyMemberDeclaration)	510	1.00	1	0	0	0
+42@vbdotnet.g:480:7(propertyMemberDeclaration)	333	1.00	1	0	0	0
+43@vbdotnet.g:480:19(propertyMemberDeclaration)	333	1.00	1	0	0	0
+47@vbdotnet.g:490:1(propertyAccessorDeclaration)	333	1.00	1	0	0	0
+51@vbdotnet.g:504:9(propertyGetDeclaration)	354	1.00	1	0	0	0
+170@vbdotnet.g:1100:1(branchStatement)	177	1.00	1	0	0	0
+171@vbdotnet.g:1118:12(returnStatement)	177	1.00	1	0	0	0
+52@vbdotnet.g:508:14(propertyGetDeclaration)	354	1.00	1	0	0	0
+45@vbdotnet.g:481:22(propertyMemberDeclaration)	530	1.00	1	0	0	0
+123@vbdotnet.g:817:16(classDeclaration)	65	1.00	1	0	0	0
+31@vbdotnet.g:418:13(typeImplements)	42	1.00	1	0	0	0
+30@vbdotnet.g:414:31(typeImplementsClause)	63	1.00	1	0	0	0
+77@vbdotnet.g:624:4(variableMemberDeclaration)	177	1.00	1	0	0	0
+84@vbdotnet.g:653:16(variableIdentifier)	190	1.00	1	0	0	0
+81@vbdotnet.g:637:26(vdVariables)	190	1.00	1	0	0	1
+80@vbdotnet.g:629:3(variableDeclarator)	190	1.00	1	0	0	0
+79@vbdotnet.g:630:10(variableDeclarator)	190	1.00	1	0	0	0
+82@vbdotnet.g:643:13(vdAsType)	190	1.00	1	0	0	0
+318@vbdotnet.g:2221:1(variableInitializer)	34	1.00	1	0	0	0
+272@vbdotnet.g:1854:4(newExpressions)	68	1.00	1	0	0	0
+271@vbdotnet.g:1857:6(newExpressions)	68	5.57	12	55	0	1
+312@vbdotnet.g:2185:1(arrayNameModifier)	58	2.00	2	0	0	0
+315@vbdotnet.g:2204:4(bound)	68	1.00	1	0	0	0
+314@vbdotnet.g:2198:13(upperBoundList)	68	1.00	1	0	0	0
+313@vbdotnet.g:2192:7(arraySizeInitializationModifier)	55	1.00	1	0	0	0
+270@vbdotnet.g:1863:8(newExpressions)	55	1.00	1	0	0	0
+83@vbdotnet.g:647:27(variableDeclarators)	190	1.00	1	0	0	0
+78@vbdotnet.g:624:52(variableMemberDeclaration)	531	1.00	1	0	0	0
+321@vbdotnet.g:2248:1(numericTypeName)	114	1.00	1	0	0	0
+48@vbdotnet.g:496:9(propertySetDeclaration)	156	1.00	1	0	0	0
+49@vbdotnet.g:496:29(propertySetDeclaration)	312	1.00	1	0	0	0
+198@vbdotnet.g:1314:1(conditionalStatement)	224	1.00	1	0	0	0
+248@vbdotnet.g:1710:4(relational_expr)	420	1.00	1	0	0	0
+346@vbdotnet.g:2566:1(literal)	513	1.00	1	0	0	0
+203@vbdotnet.g:1321:3(ifStatement)	224	1.00	1	0	0	0
+201@vbdotnet.g:1323:7(ifStatement)	224	1.00	1	0	0	0
+200@vbdotnet.g:1331:11(ifStatement)	448	1.00	1	0	0	0
+204@vbdotnet.g:1357:6(ifBlock)	224	1.00	1	0	0	0
+205@vbdotnet.g:1359:5(ifBlock)	224	1.00	1	0	0	0
+50@vbdotnet.g:500:14(propertySetDeclaration)	312	1.00	1	0	0	0
+88@vbdotnet.g:677:1(eventMemberDeclaration)	42	1.00	1	0	0	0
+89@vbdotnet.g:683:22(regularEventMemberDeclaration)	42	1.00	1	0	0	0
+92@vbdotnet.g:686:1(parametersOrType)	42	1.00	1	0	0	0
+90@vbdotnet.g:683:40(regularEventMemberDeclaration)	42	1.00	1	0	0	0
+128@vbdotnet.g:860:20(implementsList)	42	1.00	1	0	0	0
+91@vbdotnet.g:683:58(regularEventMemberDeclaration)	126	1.00	1	0	0	0
+221@vbdotnet.g:1467:1(eventStatement)	42	1.00	1	0	0	0
+222@vbdotnet.g:1477:27(raiseEventStatement)	42	1.00	1	0	0	0
+334@vbdotnet.g:2453:1(identifierModifier)	3	1.00	1	0	0	0
+310@vbdotnet.g:2176:4(arrayTypeModifiers)	18	1.50	2	0	0	0
+311@vbdotnet.g:2180:11(arrayTypeModifer)	9	1.00	1	0	0	0
+301@vbdotnet.g:2114:1(casts)	26	1.00	1	0	0	0
+299@vbdotnet.g:2115:5(casts)	26	1.00	1	0	0	0
+172@vbdotnet.g:1146:1(errorHandlingStatement)	13	1.00	1	0	0	0
+173@vbdotnet.g:1151:1(structuredErrorStatement)	13	1.00	1	0	0	0
+174@vbdotnet.g:1157:11(throwStatement)	13	1.00	1	0	0	0
+244@vbdotnet.g:1700:14(or_expr)	13	1.00	1	0	0	0
+207@vbdotnet.g:1368:12(elseClause)	13	1.00	1	0	0	0
+206@vbdotnet.g:1369:8(elseClause)	26	1.00	1	0	0	0
+345@vbdotnet.g:2540:1(queryKeywords)	15	1.00	1	0	0	0
+322@vbdotnet.g:2263:1(floatingPointTypeName)	3	1.00	1	0	0	0
+26@vbdotnet.g:384:20(namespaceDeclaration)	2	1.00	1	0	0	0
+
+~/research/papers/LL-star/ANTLR-grammars-private/vbdotnet/ter $ grep '@' /tmp/j | awk 'BEGIN {FS="\t"}; {print "k=" $4}'|sort |uniq -c |sort -r -n # dec maxk histo
+ 147 k=1
+  15 k=2
+   3 k=3
+   1 k=12
+~/research/papers/LL-star/ANTLR-grammars-private/vbdotnet/ter $ awk 'BEGIN {FS="\t"}; {if ($7>0 && $5==0 ) print $0}' /tmp/j # those that can backtrack but don't
+3@vbdotnet.g:253:3(compilation_unit)	1	1.00	1	0	0	1
+162@vbdotnet.g:1032:12(statements)	1386	1.00	1	0	0	1
+81@vbdotnet.g:637:26(vdVariables)	190	1.00	1	0	0	1
+
+SPEED
+
+~/research/papers/LL-star/ANTLR-grammars-private/vbdotnet/ter $ a vbdotnet.g
+!jc
+~/research/papers/LL-star/ANTLR-grammars-private/vbdotnet/ter $ !jc
+jc *.java
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+~/research/papers/LL-star/ANTLR-grammars-private/vbdotnet/ter $ j Main ./tests/Northwind.vb # preprocess, parse, lex time, reloading from disk
+warm up 100 times
+Unknown character '?' at line 1, offset 1 is ignored.
+Unknown character '?' at line 1, offset 1 is ignored.
+Unknown character '?' at line 1, offset 1 is ignored.
+Unknown character '?' at line 1, offset 1 is ignored.
+Unknown character '?' at line 1, offset 1 is ignored.
+Unknown character '?' at line 1, offset 1 is ignored.
+Unknown character '?' at line 1, offset 1 is ignored.
+Unknown character '?' at line 1, offset 1 is ignored.
+.....
+parse
+Unknown character '?' at line 1, offset 1 is ignored.
+      Parsed in 356ms.
+Unknown character '?' at line 1, offset 1 is ignored.
+      Parsed in 340ms.
+Unknown character '?' at line 1, offset 1 is ignored.
+      Parsed in 355ms.
+Unknown character '?' at line 1, offset 1 is ignored.
+      Parsed in 338ms.
+Unknown character '?' at line 1, offset 1 is ignored.
+      Parsed in 352ms.
+Unknown character '?' at line 1, offset 1 is ignored.
+      Parsed in 338ms.
+Unknown character '?' at line 1, offset 1 is ignored.
+      Parsed in 352ms.
+Unknown character '?' at line 1, offset 1 is ignored.
+      Parsed in 338ms.
+Unknown character '?' at line 1, offset 1 is ignored.
+      Parsed in 350ms.
+Unknown character '?' at line 1, offset 1 is ignored.
+      Parsed in 389ms.
+
+(356+340+355+338+352+338+352+338+350+389)/10
+350.80

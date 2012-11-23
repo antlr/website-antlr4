@@ -1,0 +1,236 @@
+STATIC ANALYSIS
+
+$ wc -l RatsC.g
+    1133 RatsC.g
+
+$ time a -report RatsC.g > /tmp/j
+
+real	0m2.873s
+user	0m6.982s
+sys	0m0.428s
+
+~/research/papers/LL-star/PEG-ANTLR $ cat /tmp/j|awk '{print $4 " " $5 " " $6}' |sort |uniq -c |sort -r -n|more
+ 103 k=1  
+  19 k=1 backtracks 
+  13 k=1 backtracks sempred
+   7 k=2  
+   1 k=3  
+
+~/research/papers/LL-star/PEG-ANTLR $ wc -l /tmp/j     143 /tmp/j
+
+PARSE-TIME
+
+no AST construction
+
+~/research/papers/LL-star/PEG-ANTLR $ wc -l ttt/pre_javaParser.c 
+   37019 ttt/pre_javaParser.c
+
+$ time j -Xmx2000M TestRatsC ttt/pre_javaParser.c
+ANTLR Runtime Report; Profile Version 3
+parser name RatsCParser
+Number of rule invocations 1547773
+Number of unique rules visited 146
+Number of decision events 1343176
+Overall average k per decision event 1.7905211
+Number of backtracking occurrences (can be multiple per decision) 226314
+Overall average k per decision event that backtracks 5.3074
+Number of rule invocations while backtracking 693111
+num decisions that potentially backtrack 30
+num decisions that do backtrack 24
+num decisions that potentially backtrack but don't 6
+average % of time a potentially backtracking decision backtracks 65.26646
+num unique decisions covered 131
+max rule invocation nesting depth 170
+rule memoization cache size 942004
+number of rule memoization cache hits 248893
+number of rule memoization cache misses 693111
+number of tokens 173018
+number of hidden tokens 0
+number of char 0
+number of hidden char 0
+number of syntax errors 0
+
+location	n	avgk	maxk	synpred	sempred
+2@RatsC.g:64:3(prelude)	1	1.00	1	0	0	0
+1@RatsC.g:61:12(translationUnit)	2824	1.00	1	0	0	0
+3@RatsC.g:67:1(externalDeclaration)	2823	61.29	7968	3059	206	1
+8@RatsC.g:109:3(declaration)	10632	1.00	1	0	0	0
+10@RatsC.g:121:3(declarationSpecifierPlus)	34210	1.53	2	18238	17417	1
+11@RatsC.g:124:1(declarationSpecifier)	25769	1.00	1	0	0	0
+17@RatsC.g:145:1(storageClassSpecifier)	4256	1.00	1	0	0	0
+19@RatsC.g:208:1(typeSpecifier)	28121	1.00	1	0	0	0
+76@RatsC.g:475:1(integerTypeSpecifier)	3838	1.00	1	0	0	0
+9@RatsC.g:111:28(declaration)	6516	1.00	1	0	0	0
+13@RatsC.g:139:3(initializedDeclarator)	6404	1.00	1	0	0	0
+53@RatsC.g:356:1(declarator)	14608	1.00	1	0	0	0
+56@RatsC.g:377:2(directDeclarator)	14002	1.00	1	0	0	0
+59@RatsC.g:378:2(directDeclarator)	17904	2.19	62	4680	0	1
+14@RatsC.g:139:38(initializedDeclarator)	6404	1.00	1	0	0	0
+15@RatsC.g:140:3(initializedDeclarator)	6168	1.00	1	0	0	0
+16@RatsC.g:140:27(initializedDeclarator)	6168	1.00	1	0	0	0
+12@RatsC.g:133:24(initializedDeclaratorList)	6168	1.00	1	0	0	0
+33@RatsC.g:281:1(unionTypeSpecifier)	26	7.69	50	26	0	1
+34@RatsC.g:287:10(unionTypeDefinition)	21	1.00	1	0	0	0
+35@RatsC.g:287:34(unionTypeDefinition)	21	1.00	1	0	0	0
+39@RatsC.g:300:1(structureDeclarationList)	268	1.00	1	0	0	0
+38@RatsC.g:301:2(structureDeclarationList)	2772	1.00	1	0	0	0
+40@RatsC.g:310:2(structureDeclaration)	2504	1.00	1	0	0	0
+43@RatsC.g:322:3(specifierQualifierPlus)	12426	1.40	2	4956	5049	1
+44@RatsC.g:325:1(specifierQualifier)	7514	1.00	1	0	0	0
+45@RatsC.g:331:1(optionalStructureDeclaratorList)	2504	1.00	1	0	0	0
+47@RatsC.g:342:1(structureDeclarator)	2576	4.48	64	2570	0	1
+48@RatsC.g:348:3(bitField)	1322	1.00	1	0	0	0
+49@RatsC.g:348:27(bitField)	1322	1.00	1	0	0	0
+73@RatsC.g:443:3(arrayQualifierList)	1468	1.00	1	0	0	0
+147@RatsC.g:380:27(directDeclarator)	1468	1.00	1	0	0	0
+111@RatsC.g:779:1(assignmentExpression)	39782	5.15	61	46856	0	1
+124@RatsC.g:881:1(unaryExpression)	51702	1.00	1	0	0	0
+127@RatsC.g:965:2(postfixExpression)	50210	1.25	5	7848	0	1
+132@RatsC.g:984:1(primaryExpression)	50210	1.16	2	0	0	0
+143@RatsC.g:1050:1(constant)	18816	1.00	1	0	0	0
+129@RatsC.g:966:2(postfixExpression)	111557	1.00	1	0	0	0
+112@RatsC.g:802:1(conditionalExpression)	41282	7.87	75	96708	48356	1
+123@RatsC.g:876:1(castExpression)	48924	1.34	18	8774	0	1
+122@RatsC.g:867:19(multiplicativeExpression)	45554	1.00	1	0	0	0
+121@RatsC.g:858:29(additiveExpression)	45530	1.00	1	0	0	0
+120@RatsC.g:849:23(shiftExpression)	45510	1.00	1	0	0	0
+119@RatsC.g:838:20(relationalExpression)	45494	1.00	1	0	0	0
+118@RatsC.g:829:25(equalityExpression)	44576	1.00	1	0	0	0
+117@RatsC.g:825:23(bitwiseAndExpression)	41594	1.00	1	0	0	0
+116@RatsC.g:821:25(bitwiseXorExpression)	41572	1.00	1	0	0	0
+115@RatsC.g:817:25(bitwiseOrExpression)	41572	1.00	1	0	0	0
+114@RatsC.g:813:24(logicalAndExpression)	41566	1.00	1	0	0	0
+113@RatsC.g:809:25(logicalOrExpression)	41290	1.00	1	0	0	0
+58@RatsC.g:380:27(directDeclarator)	1468	1.00	1	0	0	0
+51@RatsC.g:353:3(attributedDeclarator)	3629	1.00	1	0	0	0
+52@RatsC.g:353:38(attributedDeclarator)	3610	1.00	1	0	0	0
+46@RatsC.g:337:22(structureDeclaratorList)	2576	1.00	1	0	0	0
+42@RatsC.g:312:2(structureDeclaration)	2504	1.00	1	0	0	0
+36@RatsC.g:289:7(unionTypeDefinition)	16	1.00	1	0	0	1
+28@RatsC.g:257:1(structureTypeSpecifier)	1738	8.60	1962	1738	0	1
+29@RatsC.g:268:11(structureTypeDefinition)	995	1.00	1	0	0	0
+30@RatsC.g:268:35(structureTypeDefinition)	995	1.00	1	0	0	0
+55@RatsC.g:370:3(typeQualifierList)	6422	1.00	1	0	0	1
+54@RatsC.g:366:25(pointer)	6388	1.00	1	0	0	0
+65@RatsC.g:411:1(parameterDeclaration)	5636	3.19	11	5630	2272	1
+63@RatsC.g:413:26(parameterDeclaration)	2706	1.22	2	1196	0	1
+67@RatsC.g:421:1(abstractDeclarator)	4669	1.00	1	0	0	0
+68@RatsC.g:427:3(directAbstractDeclarator)	4669	1.02	3	38	0	1
+71@RatsC.g:430:3(directAbstractDeclarator)	4725	1.00	2	0	0	0
+64@RatsC.g:413:46(parameterDeclaration)	2706	1.00	1	0	0	0
+61@RatsC.g:406:24(parameterList)	5630	1.43	2	0	0	0
+60@RatsC.g:400:17(parameterTypeList)	3226	1.00	1	0	0	0
+32@RatsC.g:274:11(structureTypeReference)	1486	1.00	1	0	0	0
+31@RatsC.g:270:7(structureTypeDefinition)	252	1.00	1	0	0	1
+18@RatsC.g:178:1(typeQualifier)	862	1.00	1	0	0	0
+66@RatsC.g:417:3(attributedAbstractDeclarator)	38	1.00	1	0	0	0
+70@RatsC.g:432:9(directAbstractDeclarator)	38	1.00	1	0	0	0
+148@RatsC.g:412:36(parameterDeclaration)	2924	1.00	1	0	0	0
+62@RatsC.g:412:36(parameterDeclaration)	2924	1.00	1	0	0	0
+4@RatsC.g:80:2(functionDefinition)	472	1.00	1	0	0	0
+5@RatsC.g:82:6(functionDefinition)	472	1.01	2	4	4	1
+6@RatsC.g:83:3(functionDefinition)	472	1.00	1	0	0	0
+98@RatsC.g:682:3(localLabelDeclarationStar)	9074	1.00	1	0	0	0
+100@RatsC.g:692:3(declarationOrStatementStar)	33114	1.00	1	0	0	0
+101@RatsC.g:695:1(declarationOrStatement)	24040	1.37	3	8686	454	1
+93@RatsC.g:632:1(statement)	34260	1.24	2	0	0	0
+102@RatsC.g:700:1(conditionalStatement)	4346	17.72	238	4346	0	1
+87@RatsC.g:581:26(typeName)	1925	1.06	2	251	0	1
+110@RatsC.g:772:25(commaExpression)	20174	1.00	1	0	0	0
+108@RatsC.g:750:12(returnStatement)	2370	1.00	1	0	0	0
+128@RatsC.g:969:11(postfixExpression)	5881	1.00	1	0	0	0
+130@RatsC.g:975:23(expressionList)	10447	1.00	1	0	0	0
+133@RatsC.g:1015:14(assemblyStatement)	4	1.00	1	0	0	0
+139@RatsC.g:1019:1(assemblyArgument)	4	3.00	3	12	0	1
+156@RatsC.g:1020:24(assemblyArgument)	4	1.00	1	0	0	0
+141@RatsC.g:1033:3(assemblyOperand)	4	1.00	1	0	0	0
+140@RatsC.g:1027:19(assemblyOperands)	4	1.00	1	0	0	0
+158@RatsC.g:1021:24(assemblyArgument)	4	1.00	1	0	0	0
+160@RatsC.g:1022:24(assemblyArgument)	4	1.00	1	0	0	0
+138@RatsC.g:1022:24(assemblyArgument)	4	1.00	1	0	0	0
+125@RatsC.g:899:1(sizeofExpression)	30	3.50	5	30	0	1
+88@RatsC.g:589:3(attributeSpecifierPlus)	68	3.01	11	34	0	1
+89@RatsC.g:593:28(attributeSpecifier)	34	1.00	1	0	0	0
+92@RatsC.g:608:27(attributeListEntry)	48	1.00	1	0	0	0
+90@RatsC.g:602:22(attributeList)	48	1.00	1	0	0	0
+91@RatsC.g:609:9(attributeListEntry)	14	1.00	1	0	0	0
+20@RatsC.g:220:1(enumerationTypeSpecifier)	24	21.46	208	24	0	1
+21@RatsC.g:231:9(enumerationTypeDefinition)	24	1.00	1	0	0	0
+22@RatsC.g:231:33(enumerationTypeDefinition)	24	1.00	1	0	0	0
+26@RatsC.g:248:13(enumerator)	242	1.00	1	0	0	0
+25@RatsC.g:242:13(enumeratorList)	242	1.90	2	0	0	0
+23@RatsC.g:232:22(enumerationTypeDefinition)	24	1.00	1	0	0	0
+24@RatsC.g:234:10(enumerationTypeDefinition)	24	1.00	1	0	0	1
+50@RatsC.g:349:3(bitField)	68	1.00	1	0	0	0
+37@RatsC.g:293:10(unionTypeReference)	10	1.00	1	0	0	0
+75@RatsC.g:456:1(floatingPointTypeSpecifier)	20	1.00	1	0	0	0
+69@RatsC.g:430:9(directAbstractDeclarator)	18	1.00	1	0	0	0
+146@RatsC.g:379:8(directDeclarator)	12	1.00	1	0	0	0
+57@RatsC.g:379:8(directDeclarator)	12	1.00	1	0	0	0
+79@RatsC.g:539:1(initializer)	8086	1.00	1	0	0	0
+81@RatsC.g:546:1(initializerList)	2734	1.00	1	0	0	0
+82@RatsC.g:554:3(initializerListEntry)	4700	1.29	2	0	0	0
+80@RatsC.g:547:24(initializerList)	4700	1.42	2	0	0	0
+78@RatsC.g:540:22(initializer)	2734	1.00	1	0	0	0
+94@RatsC.g:647:1(labeledStatement)	5688	39.27	3610	5688	4922	1
+95@RatsC.g:652:1(label)	5688	1.00	1	0	0	0
+97@RatsC.g:666:1(caseLabel)	4922	3.00	7	4922	4922	1
+109@RatsC.g:753:1(gotoStatement)	2146	2.00	2	0	0	0
+103@RatsC.g:714:1(iterationStatement)	132	1.00	1	0	0	0
+107@RatsC.g:732:1(initialClause)	132	1.00	1	0	0	1
+106@RatsC.g:734:4(initialClause)	132	1.00	1	0	0	0
+104@RatsC.g:730:27(forStatement)	132	1.00	1	0	0	0
+105@RatsC.g:730:43(forStatement)	132	1.00	1	0	0	0
+96@RatsC.g:659:17(namedLabel)	452	1.00	1	0	0	1
+
+~/research/papers/LL-star/PEG-ANTLR $ grep '@' /tmp/j | awk 'BEGIN {FS="\t"}; {print "k=" $4}'|sort |uniq -c |sort -r -n # dec maxk histo
+  99 k=1
+  13 k=2
+   3 k=3
+   2 k=5
+   2 k=11
+   1 k=7968
+   1 k=75
+   1 k=7
+   1 k=64
+   1 k=62
+   1 k=61
+   1 k=50
+   1 k=3610
+   1 k=238
+   1 k=208
+   1 k=1962
+   1 k=18
+~/research/papers/LL-star/PEG-ANTLR $ awk 'BEGIN {FS="\t"}; {if ($7>0 && $5==0 ) print $0}' /tmp/j # those that can backtrack but don't
+36@RatsC.g:289:7(unionTypeDefinition)	16	1.00	1	0	0	1
+55@RatsC.g:370:3(typeQualifierList)	6422	1.00	1	0	0	1
+31@RatsC.g:270:7(structureTypeDefinition)	252	1.00	1	0	0	1
+24@RatsC.g:234:10(enumerationTypeDefinition)	24	1.00	1	0	0	1
+107@RatsC.g:732:1(initialClause)	132	1.00	1	0	0	1
+96@RatsC.g:659:17(namedLabel)	452	1.00	1	0	0	1
+
+SPEED
+
+                long start = System.currentTimeMillis();
+                p.translationUnit();
+                long stop = System.currentTimeMillis();
+                System.err.println("parse time "+(stop-start)+"ms");
+
+~/research/papers/LL-star/PEG-ANTLR $ j TestRatsC ttt/pre_javaParser.c # lex, parse time
+warm up 30 times
+parse
+      Parsed in 680ms.
+      Parsed in 773ms.
+      Parsed in 766ms.
+      Parsed in 752ms.
+      Parsed in 771ms.
+      Parsed in 803ms.
+      Parsed in 748ms.
+      Parsed in 835ms.
+      Parsed in 799ms.
+      Parsed in 775ms.
+
+(680+773+776+752+771+803+748+835+799+775)/10
+771.200
+
+37019 / .771 = 48014 lines/sec

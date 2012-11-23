@@ -1,0 +1,140 @@
+<html>
+<head>
+<title>Supporting document for ``LL(*): The Foundation of the ANTLR Parser Generator''</title>
+</head>
+<body bgcolor="#FFFFFF">
+<font face=Arial,Helvetica>
+
+<i>October 28, 2010</i><br>
+
+<p>
+When writing <i>LL(*): The Foundation of the ANTLR Parser Generator</i>, we collected data about open-source projects using ANTLR grammars and also collected grammar analysis data about six large grammars.  This document describes our methodology.  See the paper for full detail/results.
+
+<p>We also include material here that did not fit into the 10 page submission paper.
+
+<h3>Actions in open-source grammars</h3>
+
+We found 110 grammars and removed duplicates and anything else that would blur
+the statistics. Result:<br><br>
+
+22/89 = .247       No actions<br>
+67/89 = .752       Actions
+
+<p>41 grammars are ANTLR v2 and 48 are ANTLR v3. 43/89 grammars are tree
+grammars.
+
+<p>
+<a href="open-source-stats.txt"><b>Open-source grammars with/without
+actions</b></a> (Format is <i>filename</i> <tt>0|1</tt>. <tt>1</tt>
+indicates the grammar was deemed to have actions.)
+
+<p> <a href="open-source-methodology.txt"><b>Methodology examining for open-source grammars</b></a>.
+
+<p>Project directory names (we cannot publish actual projects for license reasons). We did "antlr grammar" searches at google code and sourceforge. A search for these names yields the projects.
+
+<p>
+
+<table>
+<tr>
+<td>EduXcomp<td>
+<td>JUnC<td>
+<td>Noop<td>
+<td>abtools-GRAMMAR<td>
+<td>booggie-1.0.1<td>
+<tr>
+<td>cesta-0.1.2<td>
+<td>dsl4j<td>
+<td><td>
+<td>funky-1.3.00<td>
+<td>gwt-xml-editor<td>
+<tr>
+<td>highlighter<td>
+<td>jai-tools<td>
+<td>kconfig-g<td>
+<td>koopa<td>
+<td>laurentpetit-ccw-b432012<td>
+<tr>
+<td>makeme-0.02<td>
+<td>modsl-read-only<td>
+<td>net.sourceforge.qvtparser_1.0.0<td>
+<td>net.sourceforge.qvtrel2op_1.0.0<td>
+<td>ontostep-plugin-0.9.0<td>
+<tr>
+<td>php-grammar-in-antlr</td>
+<td>sandbox/</td>
+<td>spapper_v1.2/</td>
+<td>sparkle-g/</td>
+<td>spydoc_1_0_pre-alpha/</td>
+</tr>
+<td>svparser/</td>
+<td>v2kparse-1.7/</td>
+<td>xpa/</td>
+<td>xqgrammar/</td>
+<td>xruby-0.3.3a-src/</td>
+</tr>
+<td>yajt-rc1-0.0.1-src/</td>
+</tr>
+</table>
+
+<h3>ANTLR download statistics</h3>
+
+Here are snapshots from Google Analytics (data only includes January 9, 2008 - October 28, 2010):
+
+<ul>
+<li><a href="download-AW-Google-Analytics.pdf"><b>ANTLRWorks downloads (62,086)</b><br><img src="AW-icon.gif" width=100></a>
+<li><a href="download-jar-GoogleAnalytics.pdf"><b>ANTLR binary jar downloads (41,364)</b><br><img src="AW-icon.gif" width=100></a>
+<li><a href="download-tar-GoogleAnalytics.pdf"><b>ANTLR src downloads (31,126)</b><br><img src="AW-icon.gif" width=100></a>
+</ul>
+
+<h3>Empirical grammar and parser runtime analysis</h3>
+
+Links to sample grammars
+
+<ul>
+<li><a href="http://www.antlr.org/grammar/1152141644268/Java.g">ANTLR Example Java.g</a> (BSD license)
+<li>RatsC, RatsJava were converted from <a href="http://cs.nyu.edu/rgrimm/xtc/rats.html">Rats!</a>, which is under GPL.  We cannot publish derivative works.
+<li>Commercial (non open-source) VB.NET, TSQL, C# grammars used with permission from <a href="http://www.temporal-wave.com">Temporal Wave, LLC</a>.
+</ul>
+
+Links to sample input
+
+<ul>
+<li>Java input is ANTLR-generated parser for RatsJava.g, which we derived from GPL Rats!.  We cannot publish derivative works.
+<li>C input is ANTLR-generated parser for RatsC.g, which we derived from GPL Rats!.  We cannot publish derivative works.
+<li>LingToSqlSamples.cs taken from <a href="http://code.msdn.microsoft.com/cs2008samples">Microsoft C# Samples</a>
+<li>TSQL sample cobbled together from <a href="http://msdn.microsoft.com/en-us/library/bb510741.aspx">Microsoft Transact-SQL Reference</a>; includes table creation, complicated stored procedures, updates, insertions, and queries.
+<li>Northwind.vb taken from <a href="http://code.msdn.microsoft.com/vb2008samples">Microsoft VB.NET Samples</a>
+</ul>
+
+Here are the raw results of static and runtime analysis for the 6 sample grammars:
+
+<ul>
+<li><a href="java.txt"><b>ANTLR Java 1.5 example</b></a>
+<li><a href="RatsC.txt"><b>C derived from Rats! C PEG</b></a>
+<li><a href="RatsJava.txt"><b>Java derived from Rats! Java PEG</b></a>
+<li><a href="vbdotnet.txt"><b>VB.NET from Temporal Wave, LLC</b></a>
+<li><a href="tsql.txt"><b>TSQL from Temporal Wave, LLC</b></a>
+<li><a href="csharp.txt"><b>C# from Temporal Wave, LLC</b></a>
+</ul>
+
+<h3>Allowing predicates at non-left-edges and Extended BNF syntax</h3>
+
+<img width="45%" src="EBNF-to-BNF.gif">
+
+<h3>ANTLR v3 LL(*) Lookahead DFA Construction Implementation</h3>
+
+Class <tt>org.antlr.analysis.NFAToDFAConverter</tt> in the ANTLR v3 distribution has a Java implementation of this algorithm.
+
+<h3>Theoretical results</h3>
+
+The paper focuses on the practical issues of nondeterministic parsing
+and introduces our algorithm for constructing LL(*) parser lookahead DFA.
+We could not fit any theoretical results, but in the following section,
+we show that we can convert any PEG to an equivalent ANTLR grammar. With
+the addition of unrestricted semantic predicates, we can reach further into the
+ context-sensitive languages than PEGs can, however.
+
+<p><a href="theoretical-results.pdf"><b>theoretical-results.pdf</b></a>
+
+</body>
+</html>

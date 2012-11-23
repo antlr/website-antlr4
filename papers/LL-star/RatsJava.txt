@@ -1,0 +1,176 @@
+STATIC ANALYSIS
+
+~/research/papers/LL-star/PEG-ANTLR $ wc -l RatsJava.g
+     744 RatsJava.g
+
+~/research/papers/LL-star/PEG-ANTLR $ time a -report RatsJava.g > /tmp/j
+!wc
+real	0m3.084s
+user	0m6.544s
+sys	0m0.602s
+
+~/research/papers/LL-star/PEG-ANTLR $ cat /tmp/j|awk '{print $4 " " $5 " " $6}' |sort |uniq -c |sort -r -n|more
+  64 k=1  
+   8 k=2  
+   8 k=1 backtracks 
+   6 cyclic  
+   1 k=3  
+
+~/research/papers/LL-star/PEG-ANTLR $ !wc
+wc -l /tmp/j
+      87 /tmp/j
+
+PARSE-TIME
+
+~/research/papers/LL-star/PEG-ANTLR $ wc RatsJavaParser.java 
+    9100   26528  348973 RatsJavaParser.java
+
+~/research/papers/LL-star/PEG-ANTLR $ j -Xmx600M TestRatsJava RatsJavaParser.java 
+ANTLR Runtime Report; Profile Version 3
+parser name RatsJavaParser
+Number of rule invocations 760481
+Number of unique rules visited 93
+Number of decision events 628340
+Overall average k per decision event 1.846217
+Number of backtracking occurrences (can be multiple per decision) 88387
+Overall average k per decision event that backtracks 5.9747925
+Number of rule invocations while backtracking 325979
+num decisions that potentially backtrack 8
+num decisions that do backtrack 7
+num decisions that potentially backtrack but don't 1
+average % of time a potentially backtracking decision backtracks 74.67908
+num unique decisions covered 78
+max rule invocation nesting depth 100
+rule memoization cache size 427681
+number of rule memoization cache hits 101702
+number of rule memoization cache misses 325979
+number of tokens 64989
+number of hidden tokens 159659
+number of char 0
+number of hidden char 0
+number of syntax errors 0
+
+location	n	avgk	maxk	synpred	sempred	canbacktrack
+1@RatsJava.g:50:3(compilationUnit)	1	1.00	1	0	0	0
+2@RatsJava.g:50:23(compilationUnit)	9	1.00	1	0	0	0
+87@RatsJava.g:626:14(qualifiedIdentifier)	2290	1.01	2	0	0	0
+5@RatsJava.g:58:32(importDeclaration)	8	1.00	1	0	0	0
+3@RatsJava.g:50:42(compilationUnit)	2	1.00	1	0	0	0
+15@RatsJava.g:128:1(declaration)	945	5.36	9	0	0	0
+6@RatsJava.g:75:3(modifierList)	4248	1.00	1	0	0	0
+20@RatsJava.g:155:26(classDeclaration)	14	1.00	1	0	0	0
+84@RatsJava.g:575:1(typeName)	3947	1.00	1	0	0	0
+83@RatsJava.g:572:12(type)	2035	1.00	1	0	0	0
+25@RatsJava.g:180:18(extension)	14	1.00	1	0	0	0
+21@RatsJava.g:156:3(classDeclaration)	14	1.00	1	0	0	0
+14@RatsJava.g:125:7(classBody)	958	1.00	1	0	0	0
+85@RatsJava.g:596:3(dimensions)	1981	1.50	2	0	0	0
+11@RatsJava.g:113:8(declarator)	1437	1.00	1	0	0	0
+12@RatsJava.g:113:20(declarator)	1437	1.00	1	0	0	0
+79@RatsJava.g:550:1(variableInitializer)	3740	1.00	1	0	0	0
+50@RatsJava.g:333:1(expression)	26449	3.44	568	26436	0	1
+51@RatsJava.g:353:1(conditionalExpression)	28276	4.61	568	28276	0	1
+58@RatsJava.g:388:1(instanceOfExpression)	29508	4.41	568	29508	0	1
+63@RatsJava.g:433:1(unaryExpression)	30774	1.00	1	0	0	0
+64@RatsJava.g:441:1(unaryExpressionNotPlusMinus)	30662	1.03	5	1272	0	1
+68@RatsJava.g:478:1(primaryExpression)	30626	2.10	6	0	0	0
+73@RatsJava.g:526:1(newArrayExpression)	880	4.00	4	0	0	0
+72@RatsJava.g:528:20(newArrayExpression)	850	1.00	1	0	0	0
+78@RatsJava.g:539:1(arrayInitializer)	863	2.00	2	0	0	0
+86@RatsJava.g:601:1(literal)	11950	1.00	1	0	0	0
+67@RatsJava.g:467:3(postfixExpression)	38512	1.37	3	0	0	0
+62@RatsJava.g:424:19(multiplicativeExpression)	30626	1.00	1	0	0	0
+61@RatsJava.g:415:28(additiveExpression)	30626	1.00	1	0	0	0
+60@RatsJava.g:405:22(shiftExpression)	30532	1.00	1	0	0	0
+59@RatsJava.g:394:19(relationalExpression)	30532	1.00	1	0	0	0
+57@RatsJava.g:380:24(equalityExpression)	29508	1.00	1	0	0	0
+56@RatsJava.g:376:22(bitwiseAndExpression)	28872	1.00	1	0	0	0
+55@RatsJava.g:372:24(bitwiseXorExpression)	28872	1.00	1	0	0	0
+54@RatsJava.g:368:24(bitwiseOrExpression)	28872	1.00	1	0	0	0
+53@RatsJava.g:364:23(logicalAndExpression)	28872	1.00	1	0	0	0
+52@RatsJava.g:360:24(logicalOrExpression)	28472	1.00	1	0	0	0
+75@RatsJava.g:540:27(arrayInitializer)	2316	1.63	2	0	0	0
+76@RatsJava.g:542:6(arrayInitializer)	863	1.00	1	0	0	0
+13@RatsJava.g:119:14(declarators)	1437	1.00	1	0	0	0
+82@RatsJava.g:562:1(resultType)	164	1.00	1	0	0	0
+10@RatsJava.g:105:1(formalParameters)	180	2.00	2	0	0	0
+16@RatsJava.g:143:46(methodDeclaration)	164	1.00	1	0	0	0
+17@RatsJava.g:144:3(methodDeclaration)	164	1.00	1	0	0	0
+18@RatsJava.g:144:17(methodDeclaration)	164	1.00	1	0	0	0
+27@RatsJava.g:192:7(block)	14896	1.00	1	0	0	0
+28@RatsJava.g:195:1(declarationOrStatement)	12477	2.33	6	0	0	0
+30@RatsJava.g:211:1(statement)	14460	1.50	2	0	0	0
+45@RatsJava.g:294:12(returnStatement)	1364	1.00	1	0	0	0
+8@RatsJava.g:96:1(variableModifiers)	1006	1.00	1	0	0	1
+7@RatsJava.g:93:37(formalParameter)	307	1.00	1	0	0	0
+9@RatsJava.g:106:23(formalParameters)	49	1.00	1	0	0	0
+19@RatsJava.g:151:35(constructorDeclaration)	16	1.00	1	0	0	0
+81@RatsJava.g:555:1(arguments)	9318	2.00	2	0	0	0
+80@RatsJava.g:556:18(arguments)	10160	1.00	1	0	0	0
+70@RatsJava.g:523:28(newClassExpression)	950	1.00	1	0	0	0
+29@RatsJava.g:200:1(inBlockDeclaration)	686	1.00	1	0	0	0
+69@RatsJava.g:505:3(thisExpression)	268	1.00	1	0	0	0
+74@RatsJava.g:532:5(concreteDimensions)	60	2.25	5	56	0	1
+71@RatsJava.g:527:37(newArrayExpression)	30	1.87	2	0	0	0
+24@RatsJava.g:174:32(throwsClause)	121	1.00	1	0	0	0
+40@RatsJava.g:262:1(tryCatchFinallyStatement)	661	208.21	1313	661	0	1
+31@RatsJava.g:230:1(conditionalStatement)	2178	17.08	189	2178	0	1
+91@RatsJava.g:263:15(tryCatchFinallyStatement)	910	1.00	1	0	0	0
+38@RatsJava.g:263:15(tryCatchFinallyStatement)	840	1.00	1	0	0	0
+41@RatsJava.g:272:30(switchStatement)	706	1.00	1	0	0	0
+42@RatsJava.g:276:1(switchClause)	521	1.00	1	0	0	0
+43@RatsJava.g:282:25(caseClause)	1915	1.00	1	0	0	0
+46@RatsJava.g:302:11(breakStatement)	463	1.00	1	0	0	0
+44@RatsJava.g:286:17(defaultClause)	176	1.00	1	0	0	0
+39@RatsJava.g:264:17(tryCatchFinallyStatement)	70	1.00	1	0	0	0
+23@RatsJava.g:164:3(blockDeclaration)	13	1.00	1	0	0	0
+37@RatsJava.g:243:1(basicForControl)	13	2.00	2	0	0	0
+32@RatsJava.g:244:42(basicForControl)	13	1.00	1	0	0	0
+33@RatsJava.g:245:7(basicForControl)	13	1.00	1	0	0	0
+49@RatsJava.g:328:14(expressionList)	13	1.00	1	0	0	0
+4@RatsJava.g:50:55(compilationUnit)	1	1.00	1	0	0	0
+
+~/research/papers/LL-star/PEG-ANTLR $ grep '@' /tmp/j | awk 'BEGIN {FS="\t"}; {print "k=" $4}'|sort |uniq -c |sort -r -n # dec maxk histo
+  57 k=1
+   9 k=2
+   3 k=568
+   2 k=6
+   2 k=5
+   1 k=9
+   1 k=4
+   1 k=3
+   1 k=189
+   1 k=1313
+~/research/papers/LL-star/PEG-ANTLR $ awk 'BEGIN {FS="\t"}; {if ($7>0 && $5==0 ) print $0}' /tmp/j # those that can backtrack but don't
+8@RatsJava.g:96:1(variableModifiers)	1006	1.00	1	0	0	1
+~/research/papers/LL-star/PEG-ANTLR $ 
+
+SPEED
+
+a ~/research/papers/LL-star/PEG-ANTLR $ a RatsJava.g
+!jc
+~/research/papers/LL-star/PEG-ANTLR $ !jc
+jc Test*.java
+
+~/research/papers/LL-star/PEG-ANTLR $ j TestRatsJava RatsJavaParser.java
+warm up 50 times
+parse
+      Parsed in 463ms.
+      Parsed in 353ms.
+      Parsed in 347ms.
+      Parsed in 409ms.
+      Parsed in 325ms.
+      Parsed in 551ms.
+      Parsed in 350ms.
+      Parsed in 483ms.
+      Parsed in 345ms.
+      Parsed in 499ms.
+~/research/papers/LL-star/PEG-ANTLR $ bc
+bc 1.06
+Copyright 1991-1994, 1997, 1998, 2000 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'. 
+(463+353+347+409+325+551+350+483+345+499)/10
+412
+
+12416 / .412 = 30135 line/sec
