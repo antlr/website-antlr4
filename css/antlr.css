@@ -130,9 +130,8 @@ section .col3 { font-size: 12px; line-height: 18px; }
 #whatis h2 { background: url(../images/icons/antlr.png) no-repeat 100% 2px; }
 #latest-news h2 { background: url(../images/icons/twitter.png) no-repeat 100% 8px; }
 #testimonials h2 { background: url(../images/icons/testimonials.png) no-repeat 100% 4px; }
+#resources { font-size: 14px; }
 #resources h2 { background: url(../images/icons/resources.png) no-repeat 100% 5px; }
-
-
 
 #whatis { font-size: 14px; margin-top: 62px; }
 

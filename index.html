@@ -91,7 +91,7 @@
 <div class="screen" id="quickstart">
 
 	<div class="slide">
-	
+OS X	
 <pre>
 <span class="dollar">$</span> <span class="cmd">cd</span> /usr/local/lib
 <span class="dollar">$</span> <span class="cmd">wget</span> http://antlr.org/download/antlr4-complete.jar
@@ -99,11 +99,26 @@
 <span class="dollar">$</span> <span class="cmd">alias</span> <span class="equals">antlr4=</span><span class="path">'java -jar /usr/local/lib/antlr-4.0-complete.jar'</span>
 <span class="dollar">$</span> <span class="cmd">alias</span> <span class="equals">grun=</span><span class="path">'java org.antlr.v4.runtime.misc.TestRig'</span>
 </pre>
+	</div>
 	
-	</div><!--/windows-->
-	
-	<div class="slide"><code>Linux</code></div>
-	<div class="slide"><code>Mac</code></div>
+<div class="slide">
+LINUX
+<pre>
+<span class="dollar">$</span> <span class="cmd">cd</span> /usr/local/lib
+<span class="dollar">$</span> <span class="cmd">wget</span> http://antlr.org/download/antlr4-complete.jar
+<span class="dollar">$</span> <span class="cmd">export</span> <span class="equals">CLASSPATH=</span><span class="path">".:/usr/local/lib/antlr-4.0-complete.jar:$CLASSPATH"</span>
+<span class="dollar">$</span> <span class="cmd">alias</span> <span class="equals">antlr4=</span><span class="path">'java -jar /usr/local/lib/antlr-4.0-complete.jar'</span>
+<span class="dollar">$</span> <span class="cmd">alias</span> <span class="equals">grun=</span><span class="path">'java org.antlr.v4.runtime.misc.TestRig'</span>
+</pre>
+</div>
+
+<div class="slide">
+Windows
+OS X	
+<pre>
+Fill in
+</pre>
+</div>
 
 </div><!--/screen-->
 
@@ -113,18 +128,18 @@
 		
 		<pre class="pre3">
 grammar Expr;		
-prof:	(expr NEWLINE)* ;
+prog:	(expr NEWLINE)* ;
 expr:	expr ('*'|'/') expr
-|	expr ('+'|'-') expr
+    |	expr ('+'|'-') expr
 |	INT
 |	'(' expr ')'
 ;
 		</pre>
 		
 		<pre class="pre3">
-$ antrl4 Expr.g4
+$ antlr4 Expr.g4
 $ javac Expr*.java
-$ grun EXpr prof -gui
+$ grun Expr prog -gui
 100+2*34
 ^D
 		</pre>
@@ -203,15 +218,22 @@ day. Nice work!
 
 <div class="col3" id="resources">
 <h2>Resources</h2>	
-	
-	<p><strong>Nullam quis risus eget urna mollis ornare vel eu leo. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. </strong></p>
-	<p>Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in quam.</p>
-	<p>Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur.</p>	
-	
-	<p><strong>Nullam quis risus eget urna mollis ornare vel eu leo. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. </strong></p>
-	<p>Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in quam.</p>
-	<p>Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur.</p>	
-	
+
+<a href="http://pragprog.com/book/tpantlr2/the-definitive-antlr-4-reference"><img src="images/tpantlr2.jpg"
+width=110></a>
+<a href="http://pragprog.com/book/tpdsl/language-implementation-patterns"><img src="images/tpdsl.jpg"
+width=110></a>
+
+<br><br><a href="http://www.antlr.org/wiki/display/ANTLR4/Getting+Started+with+ANTLR+v4">Getting started with ANTLR v4</a>
+
+<br><br><a href="http://www.antlr.org/wiki/display/ANTLR4/ANTLR+4+Documentation">ANTLR
+Documentation</a>
+
+<br><br><a href="api/index.html">Runtime API Doc</a>
+<br><br><a href="https://github.com/antlr/antlr4">Browse source tree (github)</a>
+
+<br><br><a href="http://www.antlr.org/wiki/display/ANTLR4/ANTLR+v4+FAQ">Frequently Asked Questions</a>
+
 </div><!--/col3-->
 	
 </section>
