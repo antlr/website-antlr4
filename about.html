@@ -7,7 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-		<title>ANTLR</title>
+		<title>About The ANTLR Parser Generator</title>
 
 		<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 		
@@ -50,29 +50,46 @@
 
 	<div id="content">
 	
-	<h1>Donec sed odio dui</h1>
+	<h1>About The ANTLR Parser Generator</h1>
 
-<b>ANTLR</b>, ANother Tool for Language Recognition, is a language
-tool that provides a framework for constructing recognizers,
-compilers, and translators from grammatical descriptions containing
-actions in a variety of <a
-href="http://www.antlr.org/wiki/display/ANTLR4/Code+Generation+Targets"><b>target
-languages</b></a>.  ANTLR automates the construction of language
-recognizers.  From a formal grammar, ANTLR generates a program that
-determines whether sentences conform to that language. In other words,
-it's a program that writes other programs.  By adding code snippets to
-the grammar, the recognizer becomes a translator or interpreter.
-ANTLR provides excellent support for intermediate-form tree
-construction, tree walking, translation and provides sophisticated
-automatic error recovery and reporting.
+<i>Excerpt from the <a href="http://media.pragprog.com/titles/tpantlr2/preface.pdf">preface of the ANTLR v4 book</a>:</i>
 
-<br><br>There are currently about
-<b>5,000</b> ANTLR source downloads a month and is included on all
-Linux and OS X distributions.  ANTLR is widely used because it's easy
-to understand, powerful, flexible, generates human-readable output,
-comes with complete source under the BSD license, is actively
-supported, and usually allows you to write actions in your
-favorite language.
+<br><br>
+<b>ANTLR</b> is a powerful parser generator that you can use to read,
+process, execute, or translate structured text or binary files. It’s
+widely used in academia and industry to build all sorts of languages,
+tools, and frameworks. Twitter search uses ANTLR for query parsing,
+with over 2 billion queries a day. The languages for Hive and Pig, the
+data warehouse and analysis systems for Hadoop, both use ANTLR. Lex
+Machina uses ANTLR for information extraction from legal
+texts. Oracle uses ANTLR within SQL Developer IDE and their migration
+tools. NetBeans IDE parses C++ with ANTLR. The HQL language in the
+Hibernate object-relational mapping framework is built with ANTLR.
+
+<br><br>
+Aside from these big-name, high-profile projects, you can build all
+sorts of useful tools like configuration file readers, legacy code
+converters, wiki markup renderers, and JSON parsers. I’ve built little
+tools for object-relational database mappings, describing 3D
+visualizations, injecting profiling code into Java source code, and
+have even done a simple DNA pattern matching example for a lecture.
+
+<br><br>
+From a formal language description called a grammar, ANTLR generates a
+parser for that language that can automatically build parse trees,
+which are data structures representing how a grammar matches the
+input. ANTLR also automatically generates tree walkers that you can
+use to visit the nodes of those trees to execute application-specific
+code.
+
+<br><br>There are thousands of ANTLR downloads a month and it is
+included on all Linux and OS X distributions.  ANTLR is widely used
+because it's easy to understand, powerful, flexible, generates
+human-readable output, comes with complete source under the BSD
+license, and is actively supported.
+
+<br><br>ANTLR pioneered
+http://www.antlr.org/papers/LL-star-PLDI11.pdf
 
 <br><br> <a href="http://www.antlr.org/misc/contact"><b>Terence
 Parr</b></a> is the maniac behind ANTLR and has been working on ANTLR
@@ -81,6 +98,9 @@ href="http://www.cs.usfca.edu/~parrt"><b>University of San Francisco</b></a>.
 	</div><!--/content-->
 	
 <div id="sidebar">
+<script>
+x = "class='active'"
+</script>
     <script src="scripts/leftnav.js"></script>
 </div><!--/sidebar-->
 
