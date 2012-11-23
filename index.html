@@ -1,0 +1,253 @@
+<!doctype html>
+<!--[if lt IE 9]><html class="ie"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+		<title>ANTLR</title>
+
+		<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		
+		
+		<link rel="stylesheet" href="css/fontface/Droid-Sans/stylesheet.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/fontface/DejaVu-Sans-Mono/stylesheet.css" type="text/css" media="screen" />
+			
+		<link rel="stylesheet" href="css/antlr.css" type="text/css" media="screen" />
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="scripts/selectivizr-min.js"></script>	
+		<script src="scripts/cycle.js"></script>	
+		<script src="scripts/rounded.js"></script>	
+		<script src="scripts/watermark.js"></script>	
+		
+		<script type="text/javascript" src="scripts/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+		<script type="text/javascript" src="scripts/source/jquery.fancybox.js?v=2.0.6"></script>
+		<link rel="stylesheet" type="text/css" href="scripts/source/jquery.fancybox.css?v=2.0.6" media="screen" />		
+	
+		<!--only required on the homepage-->
+		<script src="scripts/tweet/jquery.tweet.js" type="text/javascript"></script>
+		<script type='text/javascript'>
+		    jQuery(function($){
+		        $(".tweet").tweet({
+		            username: "the_antlr_guy",
+		            join_text: "auto",
+		            avatar_size: 70,
+		            count: 3,
+		            template: "{avatar}{text}{time}",
+		            loading_text: "loading tweets..."
+		        });
+		    });
+		</script>
+		<!--only required on the homepage-->
+	
+	</head>
+
+<body>
+
+<header>
+
+<a id="index" href="index.html">ANTLR</a>
+
+<nav>
+	<ul>
+		<li><a href="#">Download<span>v4.0</span></a></li>
+		<li><a href="#">ANTLRWorks</a></li>	
+		<li><a href="#">Book</a></li>	
+		<li><a href="#">Doc</a></li>
+		<li><a href="#">Grammars</a></li>
+		<li><a href="#">Support</a></li>	
+		<li><a href="#">Bugs</a></li>	
+	</ul>
+</nav>
+
+
+</header>
+
+<div id="wrapper">
+<div id="home"><!--this div provides the light background section on the homepage-->
+
+<div id="container">
+
+<div id="main">
+
+
+<div class="col3" id="whatis">
+	
+<h2>What is ANTLR?</h2>
+
+<p><strong>ANTLR</strong> (ANother Tool for Language Recognition), is a <a href="#">language tool</a> that provides a framework for constructing recognizers, interpreters, compilers, and <a href="#">translators</a> from grammatical descriptions containing actions in a variety of target languages. ANTLR provides excellent support for <a href="#">tree walking</a>, <a href="#">error recovery</a>, and <a href="#">error reporting</a>.</p>
+
+<div id="terence"><img src="images/terence.jpg" alt="terence" />
+<strong>Terence Parr</strong> is the maniac behind ANTLR and has been working on language tools since 1989. He is a professor of computer science at the University of San Francisco. 
+</div>
+	
+</div><!--/col3-->
+
+<div id="module">
+	
+<ul id="tabs">
+	<li id="tab-qs"><a href="javascript:void">Quick Start</a></li>
+	<li id="tab-sa"><a href="javascript:void">Samples</a></li>
+</ul>
+
+<h2 id="hd-sa">Samples</h2>
+<h2 id="hd-qs">Quick Start</h2>
+
+<div class="screen" id="quickstart">
+
+	<div class="slide">
+	
+<pre>
+<span class="dollar">$</span> <span class="cmd">cd</span> /usr/local/lib
+<span class="dollar">$</span> <span class="cmd">wget</span> http://antlr.org/download/antlr4-complete.jar
+<span class="dollar">$</span> <span class="cmd">export</span> <span class="equals">CLASSPATH=</span><span class="path">".:/usr/local/lib/antlr-4.0-complete.jar:$CLASSPATH"</span>
+<span class="dollar">$</span> <span class="cmd">alias</span> <span class="equals">antlr4=</span><span class="path">'java -jar /usr/local/lib/antlr-4.0-complete.jar'</span>
+<span class="dollar">$</span> <span class="cmd">alias</span> <span class="equals">grun=</span><span class="path">'java org.antlr.v4.runtime.misc.TestRig'</span>
+</pre>
+	
+	</div><!--/windows-->
+	
+	<div class="slide"><code>Linux</code></div>
+	<div class="slide"><code>Mac</code></div>
+
+</div><!--/screen-->
+
+<div class="screen" id="samples">
+
+	<div class="slide">
+		
+		<pre class="pre3">
+grammar Expr;		
+prof:	(expr NEWLINE)* ;
+expr:	expr ('*'|'/') expr
+|	expr ('+'|'-') expr
+|	INT
+|	'(' expr ')'
+;
+		</pre>
+		
+		<pre class="pre3">
+$ antrl4 Expr.g4
+$ javac Expr*.java
+$ grun EXpr prof -gui
+100+2*34
+^D
+		</pre>
+		
+		<pre class="pre3">
+<img src="images/sample3.png" alt="sample3" width="112" height="166" />
+		</pre>
+		
+		
+	</div>
+	<div class="slide"><code>Linux</code></div>
+	<div class="slide"><code>Mac</code></div>
+	
+</div><!--/screen-->
+
+	<div id="pager-qs" class="pager"></div>
+	<div id="pager-sa" class="pager"></div>
+	
+</div><!--/module-->
+
+
+
+</div><!--/main-->
+
+<section><!--home only-->
+	
+<div class="col3" id="latest-news">
+	<h2>Latest News</h2>
+	
+	<div class="tweet"></div>
+	<div class="dot-pager" id="pager-tw"></div>
+	
+</div><!--/col3-->
+
+<div class="col3" id="testimonials">
+<h2>Testimonials</h2>	
+
+<div id="tests">
+	
+	<div class="testimonial">
+		
+		ANTLR makes building custom DSLs a breeze.
+		We use ANTLR to build and parse custom Domain Specific Business Rule Languages.
+		Mukundan Agaram (Enterprise Architect)
+		
+		Great Tool Maximus.
+		Using this to parse a custom lightweight scripting language. It was quick.
+		Alpha Centuri (Cosmic)		
+		
+	</div>
+
+	<div class="testimonial">
+		
+		Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras justo odio, dapibus ac facilisis in, egestas eget quam. 
+		Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur.
+		
+	</div>
+
+	<div class="testimonial">
+		
+		Etiam porta sem malesuada magna mollis euismod. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod. 
+		Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+		
+	</div>
+
+</div><!--/tests-->
+
+<div class="dot-pager" id="pager-te"></div>	
+</div><!--/col3-->
+
+
+<div class="col3" id="resources">
+<h2>Resources</h2>	
+	
+	<p><strong>Nullam quis risus eget urna mollis ornare vel eu leo. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. </strong></p>
+	<p>Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in quam.</p>
+	<p>Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur.</p>	
+	
+	<p><strong>Nullam quis risus eget urna mollis ornare vel eu leo. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. </strong></p>
+	<p>Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in quam.</p>
+	<p>Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur.</p>	
+	
+</div><!--/col3-->
+	
+</section>
+
+
+
+</div><!--/container-->
+
+<div class="clear"><!--necessary nudge--></div>
+</div><!--/home-->
+</div><!--/wrapper-->	
+
+<footer>
+	
+	<ul>
+		<li><a href="index.html">Index</a></li>
+		<li><a href="#">Download</a></li>
+		<li><a href="#">ANTLRWorks</a></li>	
+		<li><a href="#">Book</a></li>	
+		<li><a href="#">Doc</a></li>
+		<li><a href="#">About ANTLR</a></li>
+		<li><a href="#">Support</a></li>	
+		<li><a href="#">Bugs</a></li>	
+		<li><a href="#">V3</a></li>	
+	</ul>
+	
+	<small>&copy; Copyright ANTRL / Terence Parr 2012</small>
+	
+</footer>
+
+<script src="scripts/functions.js"></script>	
+
+
+
+</body>
+</html>
