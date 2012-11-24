@@ -1,7 +1,7 @@
 document.write("<ul>");
 document.write("<li><a href='index.html'>Home</a></li>");
 document.write("<li><a href='download.html'>Download</a></li>");
-document.write("<li><a href=''>Resources</a>");
+document.write("<li>Resources");
 document.write("<ul>");
 document.write("<li><a href='http://www.antlr.org/wiki/display/ANTLR4/Getting+Started+with+ANTLR+v4'>Getting Started</a></li>");
 document.write("<li><a href='http://pragprog.com/book/tpantlr2/the-definitive-antlr-4-reference'>ANTLR v4 Book</a></li>");
