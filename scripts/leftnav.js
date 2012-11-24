@@ -18,4 +18,5 @@ document.write("<li><a href='https://github.com/antlr/antlr4/issues'>Bugs</a></l
 document.write("<li><a href='mailto:parrt@antlr.org?subject=[insert subject here]'>Contact</a></li>");
 document.write("<li><a href='credits.html'>Credits</a></li>");
 document.write("<li><a href='http://www.stringtemplate.org'>StringTemplate engine</a></li>");
+document.write("<li><a href='http://www.antlr3.org'>ANTLR v3</a></li>");
 document.write("</ul>");

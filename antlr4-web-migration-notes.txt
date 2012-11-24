@@ -8,6 +8,17 @@ on aws:
 mkdir website/antlr3
 mkdir website/antlr4
 
+currently: /usr/local/website/WEB-INF/web.xml has ptr to lime website servlet
+added www.antlr.org under Catalina like localhost
+in server.xml:
+    <Engine name="Catalina" defaultHost="www.antlr.org">
+nah. back to localhost; set it to have appBase of antlr3_webapps
+
+added to conf/web.xml for news/list etc...
+  <welcome-file>list</welcome-file>
+
+takes like 3 mins after first 3 min of init to get wiki started. wait for it.
+
 no virtual hosting; limepagedispatcher senses incoming host andsets docRoot to route traffic
 
 set port ot 80 in server.xml
