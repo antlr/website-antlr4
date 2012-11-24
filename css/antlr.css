@@ -36,7 +36,7 @@ strong { font-weight: normal; font-family: 'DroidSansBold'; }
 p { padding: 0 0 10px; }
 
 h1 { font-size: 18px; padding: 0 0 18px 0; font-weight: bold; color: #ec312e; }
-h2 { font: 15px 'DroidSansBold'; padding: 10px 0; margin: 0 0 20px; color: #ec312e; }
+h2 { font: 15px 'DroidSansBold'; padding: 10px 0; margin: 0 0 5px; color: #ec312e; }
 h3 { font-size: 12px; padding: 10px 0; font-weight: bold; }
 h4 { font-size: 12px; padding: 10px 0; font-weight: bold; }
 h5 { font-size: 12px; padding: 10px 0; font-weight: bold; }
@@ -150,7 +150,7 @@ ul#tabs li a { display: block; height: 30px; line-height: 33px; padding: 0; widt
 ul#tabs li a.active { background-position: -110px 0; }
 
 .screen { margin: 20px 20px 0; float: left; clear: both; width: 590px; display: none; height: 270px; }
-.screen div { padding: 20px; width: 550px; background: #FFF; min-height: 210px; }
+.screen div { padding: 10px; width: 570px; background: #FFF; min-height: 210px; }
 
 #quickstart {}
 #samples {}

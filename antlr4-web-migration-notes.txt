@@ -1,0 +1,108 @@
+m1.large box at amazon. shifted antlr3,4 to aws box
+
+6.0.36 tomcat untar in /usr/local
+copy ~/research/website
+copy ~/antlr/support/ newsites
+
+on aws:
+mkdir website/antlr3
+mkdir website/antlr4
+
+no virtual hosting; limepagedispatcher senses incoming host andsets docRoot to route traffic
+
+set port ot 80 in server.xml
+
+internal firewall
+ history |grep chkconfig
+   30  chkconfig iptables off 
+   31  chkconfig iptables off 
+   38  chkconfig iptables
+   39  chkconfig iptables off
+   42  chkconfig ip6tables off
+   57  history |chkconfig
+   58  history |grep chkconfig
+service iptables stop
+   41  service ip6tables stop
+
+server.xml
+
+<Host name="www.stringtemplate.org" appBase="st_webapps">
+ <Alias>stringtemplate.org</Alias>
+</Host>
+<Host name="www.antlr3.org" appBase="antlr3_webapps">
+ <Alias>antlr3.org</Alias>
+</Host>
+<Host name="www.antlr4.org" appBase="antlr4_webapps">
+ <Alias>antlr4.org</Alias>
+</Host>
+mkdir -p antlr3_webapps/ROOT
+mkdir -p antlr4_webapps/ROOT
+
+ln -s /usr/local/website/antlr4 antlr4_webapps
+ln -s /usr/local/website/antlr3 antlr3_webapps
+
+scp -r 'parrt@maniac.cs.usfca.edu:~/antlr/support/websites/ANTLR/*' /usr/local/website/antlr4/ROOT
+
+TODO: linguamantra.org, parr.us, stringtemplate.org
+
+cp research/website from maniac to website/antlr3/ROOT
+
+TODO: http://www.antlr.org/blog/index.tml
+TODO: workshops
+
+wget on 
+
+http://www.antlr.org/
+http://www.antlr.org/download.html
+http://www.antlr.org/works/index.html
+http://www.antlr.org/about.html
+http://www.antlr.org/support.html
+http://www.antlr.org/news/list
+http://www.antlr.org/article/list
+http://www.antlr.org/grammar/list
+http://www.antlr.org/share/list
+http://www.antlr.org/why.html
+http://www.antlr.org/showcase/list
+http://www.antlr.org/testimonial/list
+http://www.antlr.org/license.html
+http://www.antlr.org/credits.html
+
+renamed list.1 to news/list etc...
+
+about.html    download.html  license.html  showcase      why.html
+article       grammar        news          support.html  works
+credits.html  index.html     share         testimonial
+
+scp -r static_antlr.org parrt@maniac.cs.usfca.edu:~/research/website
+
+<Host name="www.stringtemplate.org" appBase="st_webapps"/>
+
+---------------
+CONFLUENCE
+
+	bin/catalina.sh, add:
+export JAVA_OPTS="-Xincgc -Xms128m -Xmx2048m -XX:MaxPermSize=256m $JAVA_OPTS -Djava.awt.headless=true "
+export CATALINA_OPTS="$CATALINA_OPTS -Dorg.apache.jasper.runtime.BodyContentImpl.LIMIT_BUFFER=true -Xincgc -Xmx2048m"
+
+conf/Catalina/localhost/wiki.xml:
+<Context path="/wiki" docBase="/usr/local/confluence-4.1.9/confluence" debug="0" reloadable="true">
+</Context>
+
+tar up /usr/local/confluence-4.1.9 and copy to aws
+scp parrt@antlr.org:/usr/local/confluence-4.1.9.zip .
+untar
+
+setting confluence/WEB-INF/classes/confluence-init.properties to:
+confluence.home=/var/data/confluence-4.1.9 
+
+data is /var/data/confluence-4.1.9
+
+but database is:
+
+/var/data/confluence-3.4.5
+
+/var/data/confluence-4.1.9/confluence.cfg.xml:
+    <property name="hibernate.connection.url">jdbc:hsqldb:/var/data/confluence-3.4.5/database/confluencedb</property>
+
+
+
