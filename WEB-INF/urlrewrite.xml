@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+        "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+
+<!--
+
+    Configuration file for UrlRewriteFilter
+    http://www.tuckey.org/urlrewrite/
+
+-->
+<urlrewrite>
+
+<!--
+old v3 stuff
+about.html     doc/           index.html     scripts/       testimonial/
+api/           download/      license.html   share/         why.html
+article/       download.html  news/          showcase/      works/
+blog/          grammar/       papers/        support.html   workshop/
+credits.html   images/        pipermail/     talks/         
+
+-->
+<rule>
+	<from>^/grammar/(.*)$</from>
+	<to type="redirect">http://www.antlr3.org/grammar/$1</to>
+</rule>
+
+<rule>
+	<from>^/blog/(.*)$</from>
+	<to type="redirect">http://www.antlr3.org/blog/$1</to>
+</rule>
+<rule>
+	<from>^/doc/(.*)$</from>
+	<to type="redirect">http://www.antlr3.org/doc/$1</to>
+</rule>
+<rule>
+	<from>^/news/(.*)$</from>
+	<to type="redirect">http://www.antlr3.org/news/$1</to>
+</rule>
+<rule>
+	<from>^/pipermail/(.*)$</from>
+	<to type="redirect">http://www.antlr3.org/pipermail/$1</to>
+</rule>
+<rule>
+	<from>^/article/(.*)$</from>
+	<to type="redirect">http://www.antlr3.org/article/$1</to>
+</rule>
+<rule>
+	<from>^/share/(.*)$</from>
+	<to type="redirect">http://www.antlr3.org/share/$1</to>
+</rule>
+<rule>
+	<from>^/showcase/(.*)$</from>
+	<to type="redirect">http://www.antlr3.org/showcase/$1</to>
+</rule>
+<rule>
+	<from>^/testimonial/(.*)$</from>
+	<to type="redirect">http://www.antlr3.org/testimonial/$1</to>
+</rule>
+<rule>
+	<from>^/works/(.*)$</from>
+	<to type="redirect">http://www.antlr3.org/works/$1</to>
+</rule>
+
+</urlrewrite>
