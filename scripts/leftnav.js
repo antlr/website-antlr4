@@ -6,7 +6,7 @@ document.write("<ul>");
 document.write("<li><a href='http://www.antlr.org/wiki/display/ANTLR4/Getting+Started+with+ANTLR+v4'>Getting Started</a></li>");
 document.write("<li><a href='http://pragprog.com/book/tpantlr2/the-definitive-antlr-4-reference'>ANTLR v4 Book</a></li>");
 document.write("<li><a href='http://www.antlr.org/wiki/display/ANTLR4/ANTLR+4+Documentation'>Documentation</a></li>");
-document.write("<li><a href='api.html'>Runtime API</a></li>");
+document.write("<li><a href='/api'>Runtime API</a></li>");
 document.write("<li><a href='http://pragprog.com/titles/tpantlr2/source_code'>Examples (from book)</a></li>");
 document.write("<li><a href='https://github.com/antlr/antlr4'>Source</a></li>");
 document.write("<li><a href='http://www.antlr.org/wiki/display/ANTLR4/ANTLR+v4+FAQ'>FAQ</a></li>");
