@@ -1,5 +1,5 @@
 document.write("<ul>");
-document.write("<li><a href='download.html'>Download<span>v4.0</span></a></li>\n");
+document.write("<li><a href='download.html'>Download<span>v4.1</span></a></li>\n");
 document.write("<li><a href='http://tunnelvisionlabs.com/products/antlrworks'>ANTLRWorks</a></li> \n");
 document.write("<li><a href='http://pragprog.com/book/tpantlr2/the-definitive-antlr-4-reference'>Book</a></li> \n");
 document.write("<li><a href='http://www.antlr.org/wiki/display/ANTLR4/ANTLR+4+Documentation'>Doc</a></li>\n");
