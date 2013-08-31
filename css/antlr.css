@@ -57,7 +57,8 @@ blockquote { padding: 15px; background: #FFF; color: #ec312e; margin: 10px 0 20p
 /* The <pre> tag will display code as it is formatted in HTML, minus any additional tags (e.g. <span>). */
 
 pre,code { font: 13px/20px 'DejaVuSansMonoBook'; color: #666; }
-pre { white-space: pre-line; }
+pre { white-space: pre-wrap; }
+
 .dollar { color: #C00; }
 .cmd { color: #deb41d; }
 .equals { color: #9e33c7; }
