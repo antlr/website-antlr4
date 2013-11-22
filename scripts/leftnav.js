@@ -1,6 +1,6 @@
 document.write("<ul>");
-document.write("<li><a href='index.html'>Home</a></li>");
-document.write("<li><a href='download.html'>Download</a></li>");
+document.write("<li><a href='/index.html'>Home</a></li>");
+document.write("<li><a href='/download.html'>Download</a></li>");
 document.write("<li>Resources");
 document.write("<ul>");
 document.write("<li><a href='http://www.antlr.org/wiki/display/ANTLR4/Getting+Started+with+ANTLR+v4'>Getting Started</a></li>");
@@ -11,12 +11,12 @@ document.write("<li><a href='http://pragprog.com/titles/tpantlr2/source_code'>Ex
 document.write("<li><a href='https://github.com/antlr/antlr4'>Source</a></li>");
 document.write("<li><a href='http://www.antlr.org/wiki/display/ANTLR4/ANTLR+v4+FAQ'>FAQ</a></li>");
 document.write("</ul></li>");
-document.write("<li><a href='about.html'>About ANTLR</a></li>");
-document.write("<li><a href='license.html'>License and contributions</a></li>");
-document.write("<li><a href='support.html'>Support</a></li>");
+document.write("<li><a href='/about.html'>About ANTLR</a></li>");
+document.write("<li><a href='/license.html'>License and contributions</a></li>");
+document.write("<li><a href='/support.html'>Support</a></li>");
 document.write("<li><a href='https://github.com/antlr/antlr4/issues'>Bugs</a></li>");
 document.write("<li><a href='mailto:parrt@antlr.org?subject=[insert subject here]'>Contact</a></li>");
-document.write("<li><a href='credits.html'>Credits</a></li>");
+document.write("<li><a href='/credits.html'>Credits</a></li>");
 document.write("<li><a href='http://www.stringtemplate.org'>StringTemplate engine</a></li>");
 document.write("<li><a href='http://www.antlr3.org'>ANTLR v3</a></li>");
 document.write("</ul>");
