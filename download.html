@@ -67,16 +67,25 @@
 <p><i>Looking for <a href="http://www.antlr3.org/download.html">ANTLR v3</a>?</i></p>
 
 <p>
-The latest version of ANTLR is 4.1, released June 30, 2013. As of 4.1, we have a Java and C# target, but C++ is next on deck now that we have finalized the API.
+The latest version of ANTLR is 4.1, released June 30, 2013. As of 4.1, we have a Java and C# target, but C++ is next on deck now that we have finalized the API. [<i>Unfortunately, we had to push C++ target off to unknown future date</i>]
 
 <p>
 ANTLR v4 is written in ANTLR v3.5 and StringTemplate 4.0.7. In antlr-4.1-complete.jar, you'll find everything you need to run the ANTLR tool and make its generated parsers work. Please see <a href="https://github.com/antlr/antlr4/blob/master/CHANGES.txt">CHANGES.txt</a> and <a href="https://github.com/antlr/antlr4/blob/master/README.txt">README.txt</a>.
 </p>
 
-<p>
-<img align=left src="images/icons/rocket.png"><a href="http://tunnelvisionlabs.com/products/antlrworks">ANTLRWorks 2</a>. <b>AW2.1 should be out by July 3</b>. This IDE is a sophisticated editor for ANTLR v3/v4 grammars as well as StringTemplate templates. It can run the ANTLR tool to generate recognizers and can run the TestRig (grun on command line) to test grammars. <i>To integrate ANTLR-generated recognizers into your application, you will still need at least the runtime library shown next.</i>
+<h2>ANTLRWorks2 and plugins</h2>
 
-<h3>Java Target</h3>
+<p>
+<img align=left src="images/icons/rocket.png"><a href="http://tunnelvisionlabs.com/products/antlrworks">ANTLRWorks 2</a>. This IDE is a sophisticated editor for ANTLR v3/v4 grammars as well as StringTemplate templates. It can run the ANTLR tool to generate recognizers and can run the TestRig (grun on command line) to test grammars. <i>To integrate ANTLR-generated recognizers into your application, you will still need at least the runtime library shown below.</i>
+
+<p>
+<a href="/images/intellij-v4-plugin.png"><img align=right src="/images/intellij-v4-plugin.png" width=120></a>
+Also we have a basic <a href="http://antlr.org/download/intellij-plugin-1.0a1.zip" onClick="_gaq.push(['_trackEvent', 'Downloads', 'ANTLR', 'intellij-plugin-1.0a1.zip']);">ANTLR v4 plugin</a> for <a href="http://www.jetbrains.com/idea/download/">Intellij 12</a>. It does syntax highlighting and syntax error checking. You get a navigation window too. Sample usage showing Java grammar to the right.
+<br>
+<center>
+</center>
+
+<h2>Java Target</h2>
 
 <ul>
 
@@ -87,7 +96,7 @@ ANTLR v4 is written in ANTLR v3.5 and StringTemplate 4.0.7. In antlr-4.1-complet
 <li><a href="download/antlr-runtime-4.1.jar" onClick="_gaq.push(['_trackEvent', 'Downloads', 'ANTLR', 'antlr-runtime-4.1.jar']);">ANTLR 4.1 Java runtime binaries jar</a>. Only what's needed for building and executing parsers/lexers generated in Java.
 </ul>
 
-<h3>C# Target</h3>
+<h2>C# Target</h2>
 
 <i>Currently still 4.0 not 4.1</i>. Should be out July 7.
 
