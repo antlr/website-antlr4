@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>Supporting document for ``Adaptive LL(*) Parsing''</title>
+</head>
+<body bgcolor="#FFFFFF">
+<font face=Arial,Helvetica>
+
+<i>June 21, 2013</i><br>
+
+<h3>Technical Report</h3>
+
+Expanded version of paper submitted for peer review:
+
+<ul>
+<li><a href="/papers/allstar-techreport.pdf"><b>ALL(*) Technical Report</b></a>
+</ul>
+
+<h3>Grammars</h3>
+
+<ul>
+<li><a href="C11.g4">C11.g4</a>
+<li><a href="C11SLL.g4">C11SLL.g4</a>
+<li><a href="Java.g4">Java.g4</a>
+<li><a href="JavaRats.g4">JavaRats.g4</a>
+<li><a href="JavaSable.g4">JavaSable.g4</a>
+<li><a href="Quartic.g4">Quartic.g4</a>
+<li><a href="Verilog2001.g4">Verilog2001.g4</a>
+</ul>
+
+<h3>Sample input corpi</h3>
+
+<ul>
+<li>Java: Java 7 Library
+<li>C: Preprocessed <a href="python.7z">Python</a>, <a href="postgres.7z">Postgres</a> samples
+<li>Verilog: <a href="verilog.zip">Preprocessed Verilog book examples and samples from web</a>
+<li>SQL: Proprietary TSQL test lib
+</ul>
+
+<h3>Sample boostrapping runs</h3>
+
+<p>For the parse times graph. E.g., the bootstrap runs the tsql parser starting that rule aaa_translation_unit and do 200 trials of 500 files each, parsing only .sql files and from directory tsql-input
+
+<p>
+<pre>
+java -Xmx1G Bootstrap tsql aaa_translation_unit -trials 200 -N 500 -files '.*\.sql' -toupper tsql-input
+java -Xmx1G Bootstrap Java compilationUnit      -trials 200 -N 500 -files '.*\.java' /usr/local/javasrc-1.7
+java -Xmx1G Bootstrap Verilog2001 source_text   -trials 200 -N 385 -files '.*\.v' verilog/preprocessed
+java -Xmx1G Bootstrap JavaRats compilationUnit  -trials 200 -N 500 -files '.*\.java' /usr/local/javasrc-1.7
+</pre>
+
+<p>These are pretty slow and so we ran only 10 trials:
+
+<pre>
+java -Xmx2G Bootstrap C11SLL compilationUnit     -trials 10 -N 500 -files '.*\.c' postgres python
+java -Xmx2G Bootstrap C11 compilationUnit        -trials 10 -N 500 -files '.*\.c' postgres python
+java -Xmx2G Bootstrap JavaSable compilation_unit -trials 10 -N 500 -files '.*\.java' /usr/local/javasrc-1.7/
+</pre>
+
+<h3>Generating emperical graphs</h3>
+
+<a href="Bootstrap.java">Bootstrap.java</a>
+
+<p>
+<b>Python code to plot graphs</b>:
+
+<ul>
+<li><a href="combined_atn.py">combined_atn.py</a>
+<li><a href="combined_dfa.py">combined_dfa.py</a>
+<li><a href="combined_time.py">combined_time.py</a>
+<li><a href="timeconf.py">timeconf.py</a>
+<li><a href="shared.py">shared.py</a>
+</ul>
+
+<p>
+<b>Boostrap data</b>:
+
+<ul>
+<li><a href="10x500.7z">10x500.7z</a>
+<li><a href="200x500.7z">200x500.7z</a>
+<li><a href="500x175.7z">500x175.7z</a>
+</ul>
+
+</html>
