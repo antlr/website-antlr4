@@ -1,12 +1,12 @@
 document.write("<ul>");
-document.write("<li><a href='index.html'>Index</a></li>");
-document.write("<li><a href='download.html'>Download</a></li>\n");
+document.write("<li><a href='/index.html'>Index</a></li>");
+document.write("<li><a href='/download.html'>Download</a></li>\n");
 document.write("<li><a href='http://tunnelvisionlabs.com/products/antlrworks'>ANTLRWorks</a></li> \n");
 document.write("<li><a href='http://pragprog.com/book/tpantlr2/the-definitive-antlr-4-reference'>Book</a></li> \n");
 document.write("<li><a href='http://www.antlr.org/wiki/display/ANTLR4/ANTLR+4+Documentation'>Doc</a></li>\n");
-document.write("<li><a href='about.html'>About ANTLR</a></li>\n");
-document.write("<li><a href='support.html'>Support</a></li>  \n");
+document.write("<li><a href='/about.html'>About ANTLR</a></li>\n");
+document.write("<li><a href='/support.html'>Support</a></li>  \n");
 document.write("<li><a href='https://github.com/antlr/antlr4/issues'>Bugs</a></li> \n");
 document.write("<li><a href='http://www.antlr3.org'>V3</a></li>");
 document.write("</ul>\n");
-document.write("<small>&copy; Copyright ANTLR / Terence Parr 2012</small>");
+document.write("<small>&copy; Copyright ANTLR / Terence Parr 2014</small>");
