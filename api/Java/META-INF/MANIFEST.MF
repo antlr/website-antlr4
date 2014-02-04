@@ -1,6 +1,0 @@
-Manifest-Version: 1.0
-Built-By: Sam Harwell
-Build-Jdk: 1.7.0_17
-Created-By: Apache Maven
-Archiver-Version: Plexus Archiver
-
