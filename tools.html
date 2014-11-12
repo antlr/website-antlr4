@@ -1,0 +1,138 @@
+﻿<!doctype html>
+<!--[if lt IE 9]><html class="ie"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+		<title>ANTLR Development Tools</title>
+
+		<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		
+		
+		<link rel="stylesheet" href="css/fontface/Droid-Sans/stylesheet.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/fontface/Droid-Serif/stylesheet.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/fontface/DejaVu-Sans-Mono/stylesheet.css" type="text/css" media="screen" />
+			
+		<link rel="stylesheet" href="css/antlr.css" type="text/css" media="screen" />
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="scripts/selectivizr-min.js"></script>	
+		<script src="scripts/cycle.js"></script>	
+		<script src="scripts/rounded.js"></script>	
+		<script src="scripts/watermark.js"></script>	
+		
+		<script type="text/javascript" src="scripts/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+		<script type="text/javascript" src="scripts/source/jquery.fancybox.js?v=2.0.6"></script>
+		<link rel="stylesheet" type="text/css" href="scripts/source/jquery.fancybox.css?v=2.0.6" media="screen" />		
+	
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1024344-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+	</head>
+
+<body>
+
+<header>
+
+<a id="index" href="index.html">ANTLR</a>
+
+<nav>
+  <script src="scripts/topnav.js"></script>
+</nav>
+
+
+</header>
+
+<div id="wrapper">
+<div id="container">
+
+<div id="main">
+
+	<div id="content">
+	
+<h1>ANTLR Development Tools</h1>
+
+<img align=left src="images/icons/rocket.png">There are plug-ins for Intellij, NetBeans, and Eclipse.<br><br>
+
+<h2>Intellij 12 and 13 Plugin for ANTLR 4</h2>
+
+<p>
+<a href="/images/profiler.png"><img align=right src="images/profiler.png" width=180></a>
+<a href="/images/subphrase.png"><img align=right src="images/subphrase.png" width=180></a>
+
+<p>
+We have a <a href="http://plugins.jetbrains.com/plugin/7358?pr=">ANTLR v4 plugin</a> for <a href="http://www.jetbrains.com/idea/download/">Intellij 12.1 and 13</a>. Features:
+
+
+<ul>
+<li>Syntax highlighting and syntax error checking
+<li>Code completion for tokens, rule names
+<li>Live grammar interpreter for grammar preview
+<li>Config per grammar, autobuild on save
+<li>Use the meta-key while moving the mouse and it will show you token information; click on the token that's underlined and it will show the location in the ANTLR grammar editor window of the grammar element that matched that token
+<li>Meta-j pops up a list of live templates, just like it does for Java programming
+<li>Ctrl-return, or whatever you have configured for the generate pop-up, will bring up a list of things you can generate
+<li>Alt-key while moving the mouse shows the region of input associated with parser rule that matched it
+<li>Clicking at the same time jumps the grammar to the associated rule. A pop up shows the parser call stack leading to that parse region.
+<li>Sophisticated profiler tab that shows ambiguities, lookahead depth, etc...
+</ul>
+
+ It does  You get a navigation window too. Sample usage showing Java grammar to the right. See the <a href="https://theantlrguy.atlassian.net/wiki/display/ANTLR4/Java+IDE+Integration">installation instructions</a>.
+<br>
+
+<h2>ANTLRWorks2 and NetBeans Plugin for ANTLR 3 and 4</h2>
+
+<p>
+<a href="http://tunnelvisionlabs.com/products/antlrworks">ANTLRWorks 2</a>. This IDE is a sophisticated editor for ANTLR v3/v4 grammars as well as StringTemplate templates. It can run the ANTLR tool to generate recognizers and can run the TestRig (grun on command line) to test grammars. <i>To integrate ANTLR-generated recognizers into your application, you will still need at least the <a href="/download.html">runtime library</a>.</i>
+
+<h2>Eclipse Plugin for ANTLR 4</h2>
+
+<p>
+<a href="/images/eclipse-v4-plugin.png"><img align=right src="/images/eclipse-v4-plugin.png" width=120></a>
+Edgar Espina has created an <a href="https://github.com/jknack/antlr4ide">eclipse plugin for ANTLR v4</a>. Features:
+
+<ul>
+<li>Advanced Syntax Highlighting
+<li>Automatic Code Generation (on save)
+<li>Manual Code Generation (through External Tools menu)
+<li>Code Formatter (Ctrl+Shift+F)
+<li>Syntax Diagrams
+<li>Advanced Rule Navigation between files (F3)
+<li>Quick fixes.
+</ul>
+
+
+	</div><!--/content-->
+	
+<div id="sidebar">
+    <script src="scripts/leftnav.js"></script>
+</div><!--/sidebar-->
+
+</div><!--/main-->
+
+
+</div><!--/container-->
+
+<div class="clear"><!--necessary nudge--></div>
+</div><!--/wrapper-->	
+
+<footer>
+	<script src="scripts/bottomnav.js"></script>
+</footer>
+
+<script src="scripts/functions.js"></script>	
+
+</body>
+</html>
