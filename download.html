@@ -66,15 +66,14 @@
 
 <p><i>Looking for <a href="http://www.antlr3.org/download.html">ANTLR v3</a>?</i></p>
 
-<p><i>Please try ANTLR 4.5 release candidate 2 complete <a href="http://www.antlr.org/download/antlr-4.5-rc-2-complete.jar">jar</a> and <a href="http://www.antlr.org/download/antlr-runtime-4.5-rc-2-osgi.jar">runtime jar</a>. 4.5 generates parsers/lexers in Java, C#, Python2, Python3, and JavaScript. See the <a href="https://github.com/antlr/antlr4/releases/tag/4.5-rc-2">4.5 rc2 release notes</a> for more info. This page will be updated once 4.5 goes final</i></p>
-
 <p>
-The latest version of ANTLR is 4.4, released July 16, 2014. As of 4.4, we have a Java, Python2, Python3, and <a href="https://github.com/tunnelvisionlabs/antlr4cs/releases/latest">C# target</a> (currently as separate product), but JavaScript and C++ are next on deck [no completion estimate].
+The latest version of ANTLR is 4.5, released January 22, 2015. As of 4.5, we have a <i>Java, C#, JavaScript, Python2, Python3</i> targets (and <a href="https://github.com/tunnelvisionlabs/antlr4cs/releases/latest">alternate C# target</a>). C++ is next on deck [no completion estimate].
 
-<p>
-ANTLR v4 is written in ANTLR v3.5.2 and StringTemplate 4.0.8. In antlr-4.4-complete.jar, you'll find everything you need to run the ANTLR tool and make its generated parsers work.</p>
+<p>You will need at least the ANTLR tool and the runtime for your target are targets of interest.
 
-<p><a href="https://github.com/antlr/antlr4/releases/tag/4.4"><b>Release Notes</b></a>. Please also see <a href="https://github.com/antlr/antlr4/blob/master/CHANGES.txt">CHANGES.txt</a> and <a href="https://github.com/antlr/antlr4/blob/master/README.md">README.md</a>.
+<p>See <a href="https://github.com/antlr/antlr4/releases/tag/4.5"><b>Release Notes</b></a>, <a href="https://github.com/antlr/antlr4/blob/master/README.md">README.md</a>, 
+<a href="https://theantlrguy.atlassian.net/wiki/display/ANTLR4/Getting+Started+with+ANTLR+v4">Getting started</a>,
+<a href="https://github.com/antlr/grammars-v4">Sample grammars written in v4</a>, and <a href="https://github.com/antlr/antlr4/wiki/How-to-build-ANTLR-itself">How to build ANTLR itself</a>.
 </p>
 
 <h2>Development Tools</h2>
@@ -82,38 +81,52 @@ ANTLR v4 is written in ANTLR v3.5.2 and StringTemplate 4.0.8. In antlr-4.4-compl
 <p>
 <img align=left src="images/icons/rocket.png">There are <a href="/tools.html">plug-ins for Intellij, NetBeans, and Eclipse</a>.<br><br>
 
-<h2>Java Target</h2>
+<h2>ANTLR tool and Java Target</h2>
 
 <ul>
 
-<li><a href="download/antlr-4.4-complete.jar" onClick="_gaq.push(['_trackEvent', 'Downloads', 'ANTLR', 'antlr-4.4-complete.jar']);">Complete ANTLR 4.4 Java binaries jar</a>. Complete ANTLR 4.4 tool, Java runtime and ST 4.0.8, which lets you run the tool and the generated code.
+<li><a href="download/antlr-4.5-complete.jar" onClick="_gaq.push(['_trackEvent', 'Downloads', 'ANTLR', 'antlr-4.5-complete.jar']);">Complete ANTLR 4.5 Java binaries jar</a>. Complete ANTLR 4.5 tool, Java runtime and ST 4.0.8, which lets you run the tool and the generated code.
 
-<li><a href="https://github.com/antlr/antlr4/archive/4.4.zip">ANTLR 4.4 distribution (zip)</a>. Everything you need to build the tool and Java runtime from source if you use ant or mvn.
+<li><a href="https://github.com/antlr/antlr4/archive/4.5.zip">ANTLR 4.5 distribution (zip)</a>. Everything you need to build the tool and Java runtime from source.
 
-<li><a href="download/antlr-runtime-4.4.jar" onClick="_gaq.push(['_trackEvent', 'Downloads', 'ANTLR', 'antlr-runtime-4.4.jar']);">ANTLR 4.4 Java runtime binaries jar</a>. Only what's needed for building and executing parsers/lexers generated in Java.
+<li><a href="download/antlr-runtime-4.5.jar" onClick="_gaq.push(['_trackEvent', 'Downloads', 'ANTLR', 'antlr-runtime-4.5.jar']);">ANTLR 4.5 Java runtime binaries jar</a>. Only what's needed for building and executing parsers/lexers generated in Java.
 </ul>
+
+<p>
+ANTLR v4 is written in ANTLR v3.5.2 and StringTemplate 4.0.8. In antlr-4.5-complete.jar, you'll find everything you need to run the ANTLR tool and make its generated parsers work.</p>
 
 <h2>C# Target</h2>
 
+<p>Download and unzip the .dll in <a href="http://www.antlr.org/download/antlr-csharp-runtime-4.5.zip">antlr-csharp-runtime-4.5.zip</a>.
+
+Sam Harwell, co-author of ANTLR 4, has <a href="https://github.com/tunnelvisionlabs/antlr4cs/releases/latest">an Alternative ANTLR 4 C# Target</a>. See the <a href="https://theantlrguy.atlassian.net/wiki/display/ANTLR4/C%23+Target">C# runtime target</a> for more information.
+
+<p>You might also be interested in <a href="https://theantlrguy.atlassian.net/wiki/display/ANTLR3/Antlr3CSharpReleases">ANTLR 3 and StringTemplate 4 C# releases</a>.
+
+<h2>Python Targets</h2>
+
+<p>Install with:
+
+<p><tt>pip install antlr4-python2-runtime</tt><br>
+<tt>pip install antlr4-python3-runtime</tt>
+
+<p>Or, you can download and untar the appropriate package from:
+
 <ul>
-<li><a href="https://github.com/tunnelvisionlabs/antlr4cs/releases/latest">ANTLR 4 C# Target (Latest Release)</a>.
-
-<li>
-<a href="https://github.com/tunnelvisionlabs/antlr4cs">C# ANTLR 4 Target at github</a>.
-
-<li><a href="https://theantlrguy.atlassian.net/wiki/display/ANTLR3/Antlr3CSharpReleases">ANTLR 3 and StringTemplate 4 C# releases</a>.
+<li><a href="https://pypi.python.org/pypi/antlr4-python2-runtime">https://pypi.python.org/pypi/antlr4-python2-runtime</a>
+<li><a href="https://pypi.python.org/pypi/antlr4-python3-runtime">https://pypi.python.org/pypi/antlr4-python3-runtime</a>
 </ul>
 
-<h2>Next steps</h2>
+<p>The runtimes are provided in the form of source code, so no additional installation is required.
 
-<p>
-Your next steps are probably:
+<p>See <a href="https://theantlrguy.atlassian.net/wiki/display/ANTLR4/Python+Target">Python runtime targets</a> for more information.
 
-<ul>
-<li><a href="https://theantlrguy.atlassian.net/wiki/display/ANTLR4/Getting+Started+with+ANTLR+v4">Getting started with ANTLR v4</a>.
-<li><a href="https://github.com/antlr/grammars-v4">Sample grammars written in v4</a>.
-</ul>
 
+<h2>JavaScript Target</h2>
+
+Download <a href="http://www.antlr.org/download/antlr-javascript-runtime-4.5.zip">antlr-javascript-runtime-4.5.zip</a>. Because the runtime is just JavaScript source code, there is no installation. Just refer to the JavaScript in that zip from your project.
+
+See <a href="https://theantlrguy.atlassian.net/wiki/display/ANTLR4/JavaScript+Target">JavaScript runtime target</a> for more information.
 
 <h2>Source Repository</h2>
 
@@ -121,7 +134,7 @@ Everything's up at <a href="https://github.com/antlr/antlr4">github</a>.
 
 <h2>Previous Versions</h2>
 
-Take your pick of binaries etc... from <a href="https://github.com/antlr/website-antlr4/tree/gh-pages/download">download</a>
+Take your pick of binaries etc... from <a href="http://www.antlr.org/download/index.html">download</a>
 directory or see the different versions
 at <a href="https://github.com/antlr/antlr4/tags">github</a>.
 
