@@ -101,10 +101,10 @@ science at the <a href="http://www.cs.usfca.edu/~parrt">University of San Franci
 OS X
 <pre>
 <span class="dollar">$</span> <span class="cmd">cd</span> /usr/local/lib
-<span class="dollar">$</span> <span class="cmd">sudo curl</span> -O http://www.antlr.org/download/antlr-4.5-complete.jar
-<span class="dollar">$</span> <span class="cmd">export</span> <span class="equals">CLASSPATH=</span><span class="path">".:/usr/local/lib/antlr-4.5-complete.jar:$CLASSPATH"</span>
-<span class="dollar">$</span> <span class="cmd">alias</span> <span class="equals">antlr4=</span><span class="path">'java -jar /usr/local/lib/antlr-4.5-complete.jar'</span>
-<span class="dollar">$</span> <span class="cmd">alias</span> <span class="equals">grun=</span><span class="path">'java org.antlr.v4.runtime.misc.TestRig'</span>
+<span class="dollar">$</span> <span class="cmd">sudo curl</span> -O http://www.antlr.org/download/antlr-4.5.1-complete.jar
+<span class="dollar">$</span> <span class="cmd">export</span> <span class="equals">CLASSPATH=</span><span class="path">".:/usr/local/lib/antlr-4.5.1-complete.jar:$CLASSPATH"</span>
+<span class="dollar">$</span> <span class="cmd">alias</span> <span class="equals">antlr4=</span><span class="path">'java -jar /usr/local/lib/antlr-4.5.1-complete.jar'</span>
+<span class="dollar">$</span> <span class="cmd">alias</span> <span class="equals">grun=</span><span class="path">'java org.antlr.v4.gui.TestRig'</span>
 </pre>
 	</div>
 	
@@ -112,17 +112,17 @@ OS X
 LINUX
 <pre>
 <span class="dollar">$</span> <span class="cmd">cd</span> /usr/local/lib
-<span class="dollar">$</span> <span class="cmd">wget</span> http://antlr.org/download/antlr-4.5-complete.jar
-<span class="dollar">$</span> <span class="cmd">export</span> <span class="equals">CLASSPATH=</span><span class="path">".:/usr/local/lib/antlr-4.5-complete.jar:$CLASSPATH"</span>
-<span class="dollar">$</span> <span class="cmd">alias</span> <span class="equals">antlr4=</span><span class="path">'java -jar /usr/local/lib/antlr-4.5-complete.jar'</span>
-<span class="dollar">$</span> <span class="cmd">alias</span> <span class="equals">grun=</span><span class="path">'java org.antlr.v4.runtime.misc.TestRig'</span>
+<span class="dollar">$</span> <span class="cmd">wget</span> http://antlr.org/download/antlr-4.5gui-complete.jar
+<span class="dollar">$</span> <span class="cmd">export</span> <span class="equals">CLASSPATH=</span><span class="path">".:/usr/local/lib/antlr-4.5.1-complete.jar:$CLASSPATH"</span>
+<span class="dollar">$</span> <span class="cmd">alias</span> <span class="equals">antlr4=</span><span class="path">'java -jar /usr/local/lib/antlr-4.5.1-complete.jar'</span>
+<span class="dollar">$</span> <span class="cmd">alias</span> <span class="equals">grun=</span><span class="path">'java org.antlr.v4.gui.TestRig'</span>
 </pre>
 </div>
 
 <div class="slide">
 Windows
 <ol>
-<li>Download <a href="http://antlr.org/download/antlr-4.5-complete.jar">http://antlr.org/download/antlr-4.5-complete.jar</a>.
+<li>Download <a href="http://antlr.org/download/antlr-4.5.1-complete.jar">http://antlr.org/download/antlr-4.5.1-complete.jar</a>.
 
 <li>Add antlr4-complete.jar to CLASSPATH, either:
 <ul>
@@ -136,7 +136,7 @@ SET CLASSPATH=.;C:\Javalib\antlr4-complete.jar;%CLASSPATH%
 <li>Create batch commands for ANTLR Tool, TestRig in dir in PATH
 <pre>
  antlr4.bat: java org.antlr.v4.Tool %*
- grun.bat:   java org.antlr.v4.runtime.misc.TestRig %*
+ grun.bat:   java org.antlr.v4.gui.TestRig %*
 </pre>
 </ol>
 </div>
