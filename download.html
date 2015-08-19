@@ -43,7 +43,10 @@
 <script>
 $(".downloadClick").on('click', function () {
         var target = $(this).attr("href");
+// GOOGLE
         ga('send', 'event', 'link', 'download', target, {'nonInteraction': 1});
+// WOOPRA
+	woopra.track("download", { file: target });
     });
 </script>
 
