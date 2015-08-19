@@ -41,7 +41,7 @@
 </script>
 
 <script>
-$(".downloadClick").click(function () {
+$(".downloadClick").on('click', function () {
         var target = $(this).attr("href");
         ga('send', 'event', 'link', 'download', target, {'nonInteraction': 1});
     });
