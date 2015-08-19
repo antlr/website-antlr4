@@ -40,16 +40,6 @@
 
 </script>
 
-<script>
-$(".downloadClick").on('click', function () {
-        var target = $(this).attr("href");
-// GOOGLE
-        ga('send', 'event', 'link', 'download', target, {'nonInteraction': 1});
-// WOOPRA
-	woopra.track("download", { 'file': target });
-    });
-</script>
-
 <!-- Start of Woopra Code -->
 <script>
 (function(){
@@ -62,6 +52,17 @@ woopra.config({
 woopra.track();
 </script>
 <!-- End of Woopra Code -->
+
+<script>
+$(".downloadClick").on('click', function () {
+        var target = $(this).attr("href");
+// GOOGLE
+        ga('send', 'event', 'link', 'download', target, {'nonInteraction': 1});
+// WOOPRA
+	woopra.track("download", { 'file': target });
+    });
+</script>
+
 	</head>
 
 <body>
