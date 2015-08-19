@@ -46,7 +46,7 @@ $(".downloadClick").on('click', function () {
 // GOOGLE
         ga('send', 'event', 'link', 'download', target, {'nonInteraction': 1});
 // WOOPRA
-	woopra.track("download", { file: target });
+	woopra.track("download", { 'file': target });
     });
 </script>
 
