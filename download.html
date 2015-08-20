@@ -60,6 +60,7 @@ $(".downloadClick").on('click', function () {
         ga('send', 'event', 'link', 'download', target, {'nonInteraction': 1});
 // WOOPRA
 	woopra.track("antlrdownload", { file: target.slice(0,-5) });
+	console.log("track "+target);
     });
 </script>
 
