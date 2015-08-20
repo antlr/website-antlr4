@@ -59,7 +59,7 @@ $(".downloadClick").click( function () {
         var target = $(this).attr("href");
 // GOOGLE
 // WOOPRA
-        ga('send', 'event', 'link', 'download', target, {'nonInteraction': 1}); woopra.track("antlrdownload", { file: target.slice(0,-5) });
+        ga('send', 'event', 'link', 'download', target, {'nonInteraction': 1}); woopra.track("download", { url: target.slice(0,-5) });
 	console.log("track "+target);
 	console.error("error track "+target);
 	return false;
@@ -96,7 +96,7 @@ $(".downloadClick").click( function () {
 The latest version of ANTLR is 4.5.1, released July 15, 2015. As of 4.5.1, we have a <i>Java, C#, JavaScript, Python2, Python3</i> targets (and <a href="https://github.com/tunnelvisionlabs/antlr4cs/releases/latest">alternate C# target</a>). C++ is next on deck [no completion estimate].
 
 
-<p>All users should download the <a onClick="ga('send', 'event', 'link', 'download', 'antlr-4.5.1-complete.jar', {'nonInteraction': 1}); woopra.track('antlrdownload', { file: 'antlr-4.5.1-complete.jar' });" href="download/antlr-4.5.1-complete.jar">ANTLR tool itself</a> and then choose a runtime target below, unless you are using Java which is built into the tool jar.
+<p>All users should download the <a onClick="ga('send', 'event', 'link', 'download', 'antlr-4.5.1-complete.jar', {'nonInteraction': 1}); woopra.track('download', { url: 'antlr-4.5.1-complete.jar' });" href="download/antlr-4.5.1-complete.jar">ANTLR tool itself</a> and then choose a runtime target below, unless you are using Java which is built into the tool jar.
 
 <p>See <a href="https://github.com/antlr/antlr4/releases/tag/4.5.1"><b>Release Notes</b></a>, <a href="https://github.com/antlr/antlr4/blob/master/README.md">README.md</a>, 
 <a href="https://theantlrguy.atlassian.net/wiki/display/ANTLR4/Getting+Started+with+ANTLR+v4">Getting started</a>,
@@ -112,11 +112,11 @@ The latest version of ANTLR is 4.5.1, released July 15, 2015. As of 4.5.1, we ha
 
 <ul>
 
-<li><a onClick="ga('send', 'event', 'link', 'download', 'antlr-4.5.1-complete.jar', {'nonInteraction': 1}); woopra.track('antlrdownload', { file: 'antlr-4.5.1-complete.jar' });" href="download/antlr-4.5.1-complete.jar">Complete ANTLR 4.5.1 Java binaries jar</a>. Complete ANTLR 4.5.1 tool, Java runtime and ST 4.0.8, which lets you run the tool and the generated code.
+<li><a onClick="ga('send', 'event', 'link', 'download', 'antlr-4.5.1-complete.jar', {'nonInteraction': 1}); woopra.track('download', { url: 'antlr-4.5.1-complete.jar' });" href="download/antlr-4.5.1-complete.jar">Complete ANTLR 4.5.1 Java binaries jar</a>. Complete ANTLR 4.5.1 tool, Java runtime and ST 4.0.8, which lets you run the tool and the generated code.
 
-<li><a onClick="ga('send', 'event', 'link', 'download', '4.5.1.zip', {'nonInteraction': 1}); woopra.track('antlrdownload', { file: '4.5.1.zip' });" href="https://github.com/antlr/antlr4/archive/4.5.1.zip">ANTLR 4.5.1 distribution (zip)</a>. Everything you need to build the tool and Java runtime from source.
+<li><a onClick="ga('send', 'event', 'link', 'download', '4.5.1.zip', {'nonInteraction': 1}); woopra.track('download', { url: '4.5.1.zip' });" href="https://github.com/antlr/antlr4/archive/4.5.1.zip">ANTLR 4.5.1 distribution (zip)</a>. Everything you need to build the tool and Java runtime from source.
 
-<li><a onClick="ga('send', 'event', 'link', 'download', 'antlr-runtime-4.5.1.jar', {'nonInteraction': 1}); woopra.track('antlrdownload', { file: 'antlr-runtime-4.5.1.jar' });" href="download/antlr-runtime-4.5.1.jar">ANTLR 4.5.1 Java runtime binaries jar</a>. Only what's needed for building and executing parsers/lexers generated in Java.
+<li><a onClick="ga('send', 'event', 'link', 'download', 'antlr-runtime-4.5.1.jar', {'nonInteraction': 1}); woopra.track('download', { url: 'antlr-runtime-4.5.1.jar' });" href="download/antlr-runtime-4.5.1.jar">ANTLR 4.5.1 Java runtime binaries jar</a>. Only what's needed for building and executing parsers/lexers generated in Java.
 </ul>
 
 <p>The Java jars are <b>OSGi compatible</b> so you should be able to use them within Eclipse.
@@ -155,7 +155,7 @@ Sam Harwell, co-author of ANTLR 4, has <a href="https://github.com/tunnelvisionl
 
 <h2>JavaScript Target</h2>
 
-Download <a onClick="ga('send', 'event', 'link', 'download', 'antlr-javascript-runtime-4.5.1.zip', {'nonInteraction': 1}); woopra.track('antlrdownload', { file: 'antlr-javascript-runtime-4.5.1.zip' });" href="http://www.antlr.org/download/antlr-javascript-runtime-4.5.1.zip">antlr-javascript-runtime-4.5.1.zip</a>. Because the runtime is just JavaScript source code, there is no installation. Just refer to the JavaScript in that zip from your project.
+Download <a onClick="ga('send', 'event', 'link', 'download', 'antlr-javascript-runtime-4.5.1.zip', {'nonInteraction': 1}); woopra.track('download', { url: 'antlr-javascript-runtime-4.5.1.zip' });" href="http://www.antlr.org/download/antlr-javascript-runtime-4.5.1.zip">antlr-javascript-runtime-4.5.1.zip</a>. Because the runtime is just JavaScript source code, there is no installation. Just refer to the JavaScript in that zip from your project.
 
 See <a href="https://theantlrguy.atlassian.net/wiki/display/ANTLR4/JavaScript+Target">JavaScript runtime target</a> for more information.
 
