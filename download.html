@@ -59,7 +59,7 @@ $(".downloadClick").on('click', function () {
 // GOOGLE
         ga('send', 'event', 'link', 'download', target, {'nonInteraction': 1});
 // WOOPRA
-	woopra.track("download", { file: target.slice(0,-5) });
+	woopra.track("antlrdownload", { file: target.slice(0,-5) });
     });
 </script>
 
