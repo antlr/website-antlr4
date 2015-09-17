@@ -10,4 +10,4 @@ document.write("<li><a href='https://github.com/antlr/antlr4/issues'>Bugs</a></l
 document.write("<li><a href='http://www.antlr3.org'>V3</a></li>");
 document.write("</ul>\n");
 document.write("<small>&copy; Copyright ANTLR / Terence Parr 2014</small>");
-document.write('<a href="https://www.woopra.com/"><img class="pull-right" src="img/woopra-logo.png" alt="" style="margin-left:10px"><span class="pull-right">Customer analytics provided by Woopra</span></a>');
+document.write('<p align=right><a href="https://www.woopra.com/"><img class="pull-right" src="images/woopra-logo.png" alt="" style="margin-left:10px"><span class="pull-right">Customer analytics provided by Woopra</span></a>');
