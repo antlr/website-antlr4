@@ -89,6 +89,7 @@ We have a <a href="http://plugins.jetbrains.com/plugin/7358?pr=">ANTLR v4 plugin
 
 <ul>
 <li>Syntax highlighting and syntax error checking
+<li>Navigation window 
 <li>Code completion for tokens, rule names
 <li>Live grammar interpreter for grammar preview
 <li>Config per grammar, autobuild on save
@@ -100,19 +101,19 @@ We have a <a href="http://plugins.jetbrains.com/plugin/7358?pr=">ANTLR v4 plugin
 <li>Sophisticated profiler tab that shows ambiguities, lookahead depth, etc...
 </ul>
 
- It does  You get a navigation window too. Sample usage showing Java grammar to the right.
-<br>
+<p>
+Sample usage showing Java grammar to the right.
 
 <h2>ANTLRWorks2 and NetBeans Plugin for ANTLR 3 and 4</h2>
 
 <p>
 <a href="http://tunnelvisionlabs.com/products/antlrworks">ANTLRWorks 2</a>. This IDE is a sophisticated editor for ANTLR v3/v4 grammars as well as StringTemplate templates. It can run the ANTLR tool to generate recognizers and can run the TestRig (grun on command line) to test grammars. <i>To integrate ANTLR-generated recognizers into your application, you will still need at least the <a href="/download.html">runtime library</a>.</i>
 
-<h2>Eclipse Plugin for ANTLR 4</h2>
+<h2>ANTLR4 IDE Eclipse Plugin for ANTLR 4</h2>
 
 <p>
 <a href="/images/eclipse-v4-plugin.png"><img align=right src="/images/eclipse-v4-plugin.png" width=120></a>
-Edgar Espina has created an <a href="https://github.com/jknack/antlr4ide">eclipse plugin for ANTLR v4</a>. Features:
+Edgar Espina has created an <a href="https://github.com/jknack/antlr4ide">Eclipse plugin for ANTLR v4</a>. Features:
 
 <ul>
 <li>Advanced Syntax Highlighting
@@ -120,9 +121,62 @@ Edgar Espina has created an <a href="https://github.com/jknack/antlr4ide">eclips
 <li>Manual Code Generation (through External Tools menu)
 <li>Code Formatter (Ctrl+Shift+F)
 <li>Syntax Diagrams
-<li>Advanced Rule Navigation between files (F3)
-<li>Quick fixes.
+<li>Advanced Rule Navigation between files (F3 or Ctrl+Click over a rule)
+<li>Quick fixes
 </ul>
+
+<br>
+<h2>AntlrDT Tools Suite for Eclipse</h2>
+
+<p>
+<a href="/images/antlrdt-v4-plugin.png"><img align=right src="/images/antlrdt-v4-plugin.png" width=180></a>
+
+<p>
+1. AntlrDT &mdash; an ANTLR v4 grammar editor and builder 
+<ul>
+	<li>full syntax-directed editor with outline view
+	<li>hyperlinked navigation between rules and rule subterms
+	<li>automatic builder with real-time problem feedback markers
+	<li>ANTLR grammar and Java native code formatter
+	<li>Parse Tree view &ndash; graphical visualization of generated parse trees 
+		<ul>
+			<li>builds parse trees using full (non-interpreted) grammar builds and parsing
+			<li>displays lexed tokens list and full parser/lexer errors list
+			<li>supports use of custom token emitters, token factories, and error strategies
+		</ul>
+	<li>Paths view &ndash; graphical visualization of rule connectivity paths 
+		<ul>
+			<li>shows all possible parse paths from the start rule to any other selected rule
+			<li>particularly useful in the design of XVisitor grammars and ANTLR XPaths
+		</ul>
+</ul>
+
+<p>
+<a href="/images/xvisitordt-plugin.png"><img align=right src="/images/xvisitordt-plugin.png" width=180></a>
+
+<p>
+2. XVisitorDT &mdash; an XVisitor grammar editor and builder 
+<ul>
+	<li>full syntax-directed editor with outline view
+	<li>hyperlinked navigation between rules
+	<li>automatic builder with real-time problem feedback markers
+	<li>builder performs automatic visitor code generation
+	<li>utilizes fully symbolic XPath-style rule path references
+	<li>ANTLR grammar and Java native code formatter
+</ul>
+
+<br>
+<p>
+3. StringTemplateDT &mdash; a StringTemplate v4 template editor 
+<ul>
+	<li>full syntax-directed editor with outline view
+	<li>for template ('.st') and template group ('.stg') files 
+</ul>
+
+<br>
+<p>
+<em>Update site:</em> <code>http://www.certiv.net/updates/</code>
+
 
 
 	</div><!--/content-->
