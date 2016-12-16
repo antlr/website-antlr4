@@ -80,13 +80,23 @@ woopra.track();
 <p><i>Looking for <a href="http://www.antlr3.org/download.html">ANTLR v3</a>?</i></p>
 
 <p>
-The latest version of ANTLR is 4.6, released December 15, 2016. As of 4.6, we have a <i>Java, C#, JavaScript, Python2, Python3, C++, Swift, and Go</i> targets (and <a href="https://github.com/tunnelvisionlabs/antlr4cs/releases/latest">alternate C# target</a>).
+The latest version of ANTLR is 4.6, released December 15, 2016. As of 4.6, we have these <a href="https://github.com/antlr/antlr4/blob/master/doc/targets.md">code generation targets</a>:
+
+<ul>
+<li><a href="https://github.com/antlr/antlr4/blob/master/doc/java-target.md">Java</a>
+<li><a href="https://github.com/antlr/antlr4/blob/master/doc/csharp-target.md">C#</a> (and an <a href="https://github.com/tunnelvisionlabs/antlr4cs/releases/latest">alternate C# target</a>)</li>
+<li><a href="https://github.com/antlr/antlr4/blob/master/doc/python-target.md">Python</a> (2 and 3)</li>
+<li><a href="https://github.com/antlr/antlr4/blob/master/doc/javascript-target.md">JavaScript</a></li>
+<li><a href="https://github.com/antlr/antlr4/blob/master/doc/go-target.md">Go</a></li>
+<li><a href="https://github.com/antlr/antlr4/blob/master/doc/cpp-target.md">C++</a></li>
+<li><a href="https://github.com/antlr/antlr4/blob/master/doc/swift-target.md">Swift</a></li>
+</ul>
 
 <p>All users should download the <a onClick="ga('send', 'event', 'link', 'download', 'antlr-4.6-complete.jar', {'nonInteraction': 1}); woopra.track('download', { url: 'antlr-4.6-complete' });" href="download/antlr-4.6-complete.jar">ANTLR tool itself</a> and then choose a runtime target below, unless you are using Java which is built into the tool jar.
 
 <p>See <a href="https://github.com/antlr/antlr4/releases/tag/4.6"><b>Release Notes</b></a>, <a href="https://github.com/antlr/antlr4/blob/master/README.md">README.md</a>, 
 <a href="https://github.com/antlr/antlr4/blob/master/doc/getting-started.md">Getting started</a>,
-<a href="https://github.com/antlr/grammars-v4">Sample grammars written in v4</a>, and <a href="https://github.com/antlr/antlr4/wiki/How-to-build-ANTLR-itself">How to build ANTLR itself</a>.
+<a href="https://github.com/antlr/grammars-v4">ANTLR 4 grammar repository</a>, and <a href="https://github.com/antlr/antlr4/blob/master/doc/building-antlr.md">How to build ANTLR itself</a>.
 </p>
 
 <h2>Development Tools</h2>
@@ -114,7 +124,9 @@ ANTLR v4 is written in ANTLR v3.5.2 and StringTemplate 4.0.8. In antlr-4.6-compl
 
 <h2>C# Target</h2>
 
-<p>Download and unzip the .dll in <a href="http://www.antlr.org/download/antlr-csharp-runtime-4.5.3.zip">antlr-csharp-runtime-4.5.3.zip</a>.
+<p>Via nuget, use <a href="https://www.nuget.org/packages/Antlr4.Runtime.Standard/4.6.0">Install-Package Antlr4.Runtime.Standard</a> via Package Manager Console.</p>
+
+<p>Or, download and unzip the .dll in <a href="http://www.antlr.org/download/antlr-csharp-runtime-4.6.zip">antlr-csharp-runtime-4.6.zip</a>.
 
 Sam Harwell, co-author of ANTLR 4, has <a href="https://github.com/tunnelvisionlabs/antlr4cs/releases/latest">an Alternative ANTLR 4 C# Target</a>.
 
@@ -139,9 +151,26 @@ Sam Harwell, co-author of ANTLR 4, has <a href="https://github.com/tunnelvisionl
 
 <h2>JavaScript Target</h2>
 
-Download <a onClick="ga('send', 'event', 'link', 'download', 'antlr-javascript-runtime-4.5.3.zip', {'nonInteraction': 1}); woopra.track('download', { url: 'antlr-javascript-runtime-4.5.3.zip' });" href="http://www.antlr.org/download/antlr-javascript-runtime-4.5.3.zip">antlr-javascript-runtime-4.5.3.zip</a>. Because the runtime is just JavaScript source code, there is no installation. Just refer to the JavaScript in that zip from your project.
+Download <a onClick="ga('send', 'event', 'link', 'download', 'antlr-javascript-runtime-4.6.zip', {'nonInteraction': 1}); woopra.track('download', { url: 'antlr-javascript-runtime-4.6.zip' });" href="http://www.antlr.org/download/antlr-javascript-runtime-4.6.zip">antlr-javascript-runtime-4.6.zip</a>. Because the runtime is just JavaScript source code, there is no installation. Just refer to the JavaScript in that zip from your project.
 
 See <a href="https://github.com/antlr/antlr4/blob/master/doc/javascript-target.md">JavaScript runtime target</a> for more information.
+
+<h2>C++ Target</h2>
+
+<ul>
+<li>Mac users: <a href="/download/antlr4-cpp-runtime-4.6-macos.zip">antlr4-cpp-runtime-4.6-macos.zip (.h, .a, .dylib)</a>
+<li>Others use source distribution: <a href="/download/antlr4-cpp-runtime-4.6-source.zip">antlr4-cpp-runtime-4.6-source.zip (.h, .cpp)</a>
+</ul>
+
+<h2>Go Target</h2>
+
+<p>Install it on your <tt>GOPATH</tt> via:
+<tt>go get github.com/antlr/antlr4/runtime/Go/antlr</tt>
+</p>
+
+<h2>Swift Target</h2>
+
+Due to unstable ABI of Swift language, there will not be a single "library" for the Swift ANTLR runtime for now. To get Swift ANTLR runtime, clone the <a href="https://github.com/antlr/antlr4">ANTLR repository</a>. Open it in finder. From the root directory of the repo, go to runtime/Swift folder. You will see the Xcode project manifest file: <tt>Antlr4.xcodeproj</tt>. Drag it into your project. See <a href="https://github.com/antlr/antlr4/blob/master/doc/swift-target.md">Swift target notes</a> for more info.
 
 <h2>Source Repository</h2>
 
