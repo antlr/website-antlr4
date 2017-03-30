@@ -12,3 +12,4 @@ org.antlr.v4.parse
 org.antlr.v4.semantics
 org.antlr.v4.tool
 org.antlr.v4.tool.ast
+org.antlr.v4.unicode
