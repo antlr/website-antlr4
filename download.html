@@ -117,7 +117,17 @@ The latest version of ANTLR is 4.7.1, released December 10, 2017. As of 4.7.1, w
 
 <p>The Java jars are <b>OSGi compatible</b> so you should be able to use them within Eclipse.
  
-<p>To use <b>maven</b>, refer to group ID <tt>org.antlr</tt> and artifact ID <tt>antlr4</tt> for the tool itself and <tt>antlr4-runtime</tt> for the Java runtime library in your <tt>pom.xml</tt> file. The latest version is 4.7.1. See <a href="http://www.antlr.org/api/maven-plugin/latest/index.html">ANTLR 4 Maven plugin</a>, <a href="http://www.antlr.org/api/maven-plugin/latest/usage.html">ANTLR 4 Maven plug-in usage</a>, and <a href="http://www.antlr.org/api/maven-plugin/latest/antlr4-mojo.html">ANTLR 4 Maven Plugin API</a>.
+<p>To use <b>maven</b>, refer to group ID <tt>org.antlr</tt> and artifact ID <tt>antlr4</tt> for the tool itself and <tt>antlr4-runtime</tt> for the Java runtime library in your <tt>pom.xml</tt> file. The latest version is 4.7.1:</p>
+
+<pre>
+&lt;dependency> 
+  &lt;groupId>org.antlr&lt;/groupId> 
+  &lt;artifactId>antlr4&lt;/artifactId> 
+  &lt;version>4.7.1&lt;/version> 
+&lt;/dependency> 
+</pre><br>
+
+<p>See <a href="http://www.antlr.org/api/maven-plugin/latest/index.html">ANTLR 4 Maven plugin</a>, <a href="http://www.antlr.org/api/maven-plugin/latest/usage.html">ANTLR 4 Maven plug-in usage</a>, and <a href="http://www.antlr.org/api/maven-plugin/latest/antlr4-mojo.html">ANTLR 4 Maven Plugin API</a>.
 
 <p>
 ANTLR v4 is written in ANTLR v3.5.2 and StringTemplate 4.0.8. In antlr-4.7.1-complete.jar, you'll find everything you need to run the ANTLR tool and make its generated parsers work.</p>
@@ -126,7 +136,9 @@ ANTLR v4 is written in ANTLR v3.5.2 and StringTemplate 4.0.8. In antlr-4.7.1-com
 
 <p>Via nuget, use <a href="https://www.nuget.org/packages/Antlr4.Runtime.Standard/4.7.1.1">Install-Package Antlr4.Runtime.Standard</a> (version says 4.7.1.1 but it's in sync with 4.7.1) via Package Manager Console.</p>
 
+<!--
 <p>Or, download and unzip the .dll in <a href="http://www.antlr.org/download/antlr-csharp-runtime-4.7.1.zip">antlr-csharp-runtime-4.7.1.zip</a>.
+-->
 
 Sam Harwell, co-author of ANTLR 4, has <a href="https://github.com/tunnelvisionlabs/antlr4cs/releases/latest">an Alternative ANTLR 4 C# Target</a>.
 
