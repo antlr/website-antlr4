@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"org.antlr.mojo.antlr4","l":"Antlr4ErrorLog"},{"p":"org.antlr.mojo.antlr4","l":"Antlr4Mojo"},{"p":"org.antlr.mojo.antlr4","l":"HelpMojo"}]
