@@ -40,18 +40,6 @@
 	
 
 
-<!-- Start of Woopra Code -->
-<script>
-(function(){
-        var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call","trackForm","trackClick"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/t/5.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
-})("woopra");
-
-woopra.config({
-    domain: 'antlr.org'
-});
-woopra.track();
-</script>
-<!-- End of Woopra Code -->
 
 	</head>
 
@@ -94,7 +82,7 @@ The latest version of ANTLR is 4.10.1, released April 15, 2022. As of 4.10.1, we
 <li><a href="https://github.com/antlr/antlr4/blob/master/doc/dart-target.md">DART</a></li>
 </ul>
 
-<p>All users should download the <a onClick="ga('send', 'event', 'link', 'download', 'antlr-4.10.1-complete.jar', {'nonInteraction': 1}); woopra.track('download', { url: 'antlr-4.10.1-complete' });" href="download/antlr-4.10.1-complete.jar">ANTLR tool itself</a> and then choose a runtime target below, unless you are using Java which is built into the tool jar.
+<p>All users should download the <a href="download/antlr-4.10.1-complete.jar">ANTLR tool itself</a> and then choose a runtime target below, unless you are using Java which is built into the tool jar.
 
 <p>See <a href="https://github.com/antlr/antlr4/releases/tag/4.10.1"><b>Release Notes</b></a>, <a href="https://github.com/antlr/antlr4/blob/master/README.md">README.md</a>, 
 <a href="https://github.com/antlr/antlr4/blob/master/doc/getting-started.md">Getting started</a>,
@@ -110,11 +98,11 @@ The latest version of ANTLR is 4.10.1, released April 15, 2022. As of 4.10.1, we
 
 <ul>
 
-<li><a onClick="ga('send', 'event', 'link', 'download', 'antlr-4.10.1-complete.jar', {'nonInteraction': 1}); woopra.track('download', { url: 'antlr-4.10.1-complete' });" href="download/antlr-4.10.1-complete.jar">Complete ANTLR 4.10.1 Java binaries jar</a>. Complete ANTLR 4.10.1 tool, Java runtime and ST 4.0.8, which lets you run the tool and the generated code.
+<li><a  href="download/antlr-4.10.1-complete.jar">Complete ANTLR 4.10.1 Java binaries jar</a>. Complete ANTLR 4.10.1 tool, Java runtime and ST 4.0.8, which lets you run the tool and the generated code.
 
-<li><a onClick="ga('send', 'event', 'link', 'download', '4.10.1.zip', {'nonInteraction': 1}); woopra.track('download', { url: '4.10.1.zip' });" href="https://github.com/antlr/antlr4/archive/4.10.1.zip">ANTLR 4.10.1 distribution (zip)</a>. Everything you need to build the tool and Java runtime from source.
+<li><a  href="https://github.com/antlr/antlr4/archive/4.10.1.zip">ANTLR 4.10.1 distribution (zip)</a>. Everything you need to build the tool and Java runtime from source.
 
-<li><a onClick="ga('send', 'event', 'link', 'download', 'antlr-runtime-4.10.1.jar', {'nonInteraction': 1}); woopra.track('download', { url: 'antlr-runtime-4.10.1' });" href="download/antlr-runtime-4.10.1.jar">ANTLR 4.10.1 Java runtime binaries jar</a>. Only what's needed for building and executing parsers/lexers generated in Java.
+<li><a  href="download/antlr-runtime-4.10.1.jar">ANTLR 4.10.1 Java runtime binaries jar</a>. Only what's needed for building and executing parsers/lexers generated in Java.
 </ul>
 
 <p>The Java jars are <b>OSGi compatible</b> so you should be able to use them within Eclipse.
@@ -169,7 +157,7 @@ Install with:
 
 <p><tt>npm install antlr4</tt><br>
 
-<p>Or, you can download <a onClick="ga('send', 'event', 'link', 'download', 'antlr-javascript-runtime-4.10.1.zip', {'nonInteraction': 1}); woopra.track('download', { url: 'antlr-javascript-runtime-4.10.1.zip' });" href="http://www.antlr.org/download/antlr-javascript-runtime-4.10.1.zip">antlr-javascript-runtime-4.10.1.zip</a>.
+<p>Or, you can download <a  href="http://www.antlr.org/download/antlr-javascript-runtime-4.10.1.zip">antlr-javascript-runtime-4.10.1.zip</a>.
 
 <p>The runtime is provided in the form of source code, so no additional installation is required. Simply refer to the JavaScript in that zip from your project, and eventually webpack it.
 
