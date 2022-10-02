@@ -79,106 +79,58 @@ working on language tools since 1989.<br><br><i>Check out Terence impersonating 
 </div><!--/col3-->
 
 <div id="module">
-	
-<ul id="tabs">
-	<li id="tab-qs"><a href="javascript:void">Quick Start</a></li>
-	<li id="tab-sa"><a href="javascript:void">Samples</a></li>
-</ul>
 
-<h2 id="hd-sa">Samples</h2>
-<h2 id="hd-qs">Quick Start
+<div style="border: .5px solid #DA443A; padding: 5px 5px">
+<div style="font: 15px 'DroidSansBold'; padding: 10px 0; margin: 0 0 5px; color: #ec312e;">Quick Start
+</div>
+<div style="font: 13px 'DroidSansBold'">To try ANTLR immediately, jump to the <i>new</i> <u><a href="http://lab.antlr.org/" style="color: #C00">ANTLR Lab</a></u>!</div><br>
 
+<div style="font-size: 14px">
+To install locally, use <a href="https://github.com/antlr/antlr4-tools">antlr4-tools</a>, which installs Java and ANTLR if needed and creates <tt>antlr4</tt> and <tt>antlr4-parse</tt> executables:<br><br>
+<pre>
+<span class="dollar">$</span> <span class="cmd">pip</span> install antlr4-tools
+</pre>
 <br>
-<font size=2>To try ANTLR immediately, jump to the <i>new</i> <a href="http://lab.antlr.org/">ANTLR Lab</a>!<br>Also, see the <a href="https://github.com/antlr/antlr4/blob/master/doc/getting-started.md">Getting Started</a> doc</font>
-</h2>
-
-<div class="screen" id="quickstart">
-
-	<div class="slide">
-OS X
-<pre>
-<span class="dollar">$</span> <span class="cmd">cd</span> /usr/local/lib
-<span class="dollar">$</span> <span class="cmd">sudo curl</span> -O https://www.antlr.org/download/antlr-4.11.1-complete.jar
-<span class="dollar">$</span> <span class="cmd">export</span> <span class="equals">CLASSPATH=</span><span class="path">".:/usr/local/lib/antlr-4.11.1-complete.jar:$CLASSPATH"</span>
-<span class="dollar">$</span> <span class="cmd">alias</span> <span class="equals">antlr4=</span><span class="path">'java -jar /usr/local/lib/antlr-4.11.1-complete.jar'</span>
-<span class="dollar">$</span> <span class="cmd">alias</span> <span class="equals">grun=</span><span class="path">'java org.antlr.v4.gui.TestRig'</span>
-</pre>
-	</div>
-	
-<div class="slide">
-LINUX
-<pre>
-<span class="dollar">$</span> <span class="cmd">cd</span> /usr/local/lib
-<span class="dollar">$</span> <span class="cmd">wget</span> https://www.antlr.org/download/antlr-4.11.1-complete.jar
-<span class="dollar">$</span> <span class="cmd">export</span> <span class="equals">CLASSPATH=</span><span class="path">".:/usr/local/lib/antlr-4.11.1-complete.jar:$CLASSPATH"</span>
-<span class="dollar">$</span> <span class="cmd">alias</span> <span class="equals">antlr4=</span><span class="path">'java -jar /usr/local/lib/antlr-4.11.1-complete.jar'</span>
-<span class="dollar">$</span> <span class="cmd">alias</span> <span class="equals">grun=</span><span class="path">'java org.antlr.v4.gui.TestRig'</span>
-</pre>
-</div>
-
-<div class="slide">
-Windows
-<ol>
-<li>Download <a href="https://www.antlr.org/download/antlr-4.11.1-complete.jar">https://www.antlr.org/download/antlr-4.11.1-complete.jar</a>.
-
-<li>Add antlr4-complete.jar to CLASSPATH, either:
-<ul>
-<li>Permanently: Using System Properties dialog > Environment variables > Create or append to CLASSPATH variable
-<li>Temporarily, at command line:<br>
-<pre>
-SET CLASSPATH=.;C:\Javalib\antlr4-complete.jar;%CLASSPATH%
-</pre>
-</ul>
-
-<li>Create batch commands for ANTLR Tool, TestRig in dir in PATH
-<pre>
- antlr4.bat: java org.antlr.v4.Tool %*
- grun.bat:   java org.antlr.v4.gui.TestRig %*
-</pre>
-</ol>
-</div>
-
-</div><!--/screen-->
-
-<div class="screen" id="samples">
-
-	<div class="slide">
-		
-		<pre class="pre3">
-grammar Expr;		
-prog:	(expr NEWLINE)* ;
-expr:	expr ('*'|'/') expr
-    |	expr ('+'|'-') expr
-    |	INT
-    |	'(' expr ')'
+(Windows must add <tt>..\LocalCache\local-packages\Python310\Scripts</tt> to the <tt>PATH</tt>). See the <a href="https://github.com/antlr/antlr4/blob/master/doc/getting-started.md">Getting Started</a> doc.  Paste the following grammar into file <tt>Expr.g4</tt> and, from that directory, run the <tt>antlr4-parse</tt> command. Hit control-D on Unix (or control-Z on Windows) to indicate end-of-input. A window showing the parse tree will appear.
+<br><br>
+<table border="0">
+	<tr>
+		<td valign="top" style="border-right: 1px solid darkgrey; padding-right: 10px">
+<pre style="font-size: 12px">
+<span style="color: #871F7C;">grammar</span> <span style="color:black">Expr</span>;
+<span style="color: #00079C;">prog</span>:   (<span style="color: #00079C;">expr</span> <span style="color: #498393;">NEWLINE</span>)* ;
+<span style="color: #00079C;">expr</span>:   <span style="color: #00079C;">expr</span> ('*'|'/') <span style="color: #00079C;">expr</span>
+    |   <span style="color: #00079C;">expr</span> ('+'|'-') <span style="color: #00079C;">expr</span>
+    |   <span style="color: #498393;">INT</span>
+    |   '(' <span style="color: #00079C;">expr</span> ')'
     ;
-NEWLINE : [\r\n]+ ;
-INT     : [0-9]+ ;
+<span style="color: #498393;">NEWLINE</span> : [\r\n]+ ;
+<span style="color: #498393;">INT</span>     : [0-9]+ ;
 </pre>
-		
-		<pre class="pre3">
-$ antlr4 Expr.g4
-$ javac Expr*.java
-$ grun Expr prog -gui
-100+2*34
-^D
-		</pre>
-		
-		<pre class="pre3">
-<img src="images/sample3.png" alt="sample3" width="130"/>
-		</pre>
-		
-		
-	</div>
-	<div class="slide"><code>Linux</code></div>
-	<div class="slide"><code>Mac</code></div>
-	
-</div><!--/screen-->
+</td>
 
-	<div id="pager-qs" class="pager"></div>
-	<div id="pager-sa" class="pager"></div>
-	
-</div><!--/module-->
+<td valign="top" style="font-size: 12px; border-right: 1px solid darkgrey; padding-right: 10px; padding-left: 10px">
+<pre>
+<span class="dollar">$</span> <span class="cmd">antlr4-parse</span> Expr.g4 prog -gui
+10+20*30
+<i>^D</i>
+<span class="dollar">$</span> <span class="cmd">antlr4</span> Expr.g4  # gen code
+<span class="dollar">$</span> <span class="cmd">ls</span> ExprParser.java
+ExprParser.java
+</pre>
+</td>
+
+<td style="padding-left: 10px" valign="top">
+	<img src="images/sample3.png" alt="sample3" width="130"/>
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+
+</div> <!-- module -->
 
 </div><!--/main-->
 

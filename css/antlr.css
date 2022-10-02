@@ -60,7 +60,8 @@ pre,code { font: 13px/20px 'DejaVuSansMonoBook'; color: #666; }
 pre { white-space: pre-wrap; }
 
 .dollar { color: #C00; }
-.cmd { color: #deb41d; }
+/*.cmd { color: #deb41d; }*/
+.cmd { color: #31a2e6; }
 .equals { color: #9e33c7; }
 .path { color: #31a2e6; }
 
@@ -134,14 +135,14 @@ section .col3 { font-size: 12px; line-height: 18px; }
 #resources { font-size: 14px; }
 #resources h2 { background: url(../images/icons/resources.png) no-repeat 100% 5px; }
 
-#whatis { font-size: 14px; margin-top: 62px; }
+#whatis { font-size: 14px; margin-top: 12px; }
 
 #terence { font-size: 12px; line-height: 15px; background: url(../images/divider.png) repeat-x; margin: 20px 0; padding: 20px 0;  }
 #terence img { float: left; border: 1px solid #CCC; padding: 4px; background: #FFF; margin: -5px 10px 0 0; }
 
 /* MODULE */
 
-#module { float: right; width: 630px; height: 480px; margin: 20px 0 0; background: url(../images/module.jpg) no-repeat 0 30px; }
+#module { float: right; width: 630px; height: 480px; margin: 20px 0 0; }
 
 #module h2 { display: none; color: #FFF; margin: 10px 20px; height: 30px; float: left; font-size: 20px; }
 
