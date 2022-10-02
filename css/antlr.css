@@ -118,7 +118,7 @@ footer small { float: right; margin: 10px 0;  font-size: 12px; color: #BBB; }
 
 
 
-.col3 { float: left; width: 280px; padding: 0; min-height: 300px; margin: 40px 70px 0 0; background: url(../images/divider.png) repeat-x 0 40px; }
+.col3 { float: left; width: 280px; padding: 0; min-height: 300px; margin: 0px 70px 0 0; background: url(../images/divider.png) repeat-x 0 40px; }
 .col3:nth-child(3) { margin-right: 0; }
 .col3 h2 { padding: 10px 0 20px; }
 
@@ -136,7 +136,7 @@ section .col3 { font-size: 12px; line-height: 18px; }
 
 #whatis { font-size: 14px; margin-top: 62px; }
 
-#terence { font-size: 12px; line-height: 18px; background: url(../images/divider.png) repeat-x; margin: 20px 0; padding: 20px 0;  }
+#terence { font-size: 12px; line-height: 15px; background: url(../images/divider.png) repeat-x; margin: 20px 0; padding: 20px 0;  }
 #terence img { float: left; border: 1px solid #CCC; padding: 4px; background: #FFF; margin: -5px 10px 0 0; }
 
 /* MODULE */
