@@ -68,7 +68,7 @@
 <p><i>Looking for <a href="http://www.antlr3.org/download.html">ANTLR v3</a>?</i></p>
 
 <p>
-The latest version of ANTLR is 4.12.0, released February 19, 2023. As of 4.12.0, we have these <a href="https://github.com/antlr/antlr4/blob/master/doc/targets.md">code generation targets</a>:
+The latest version of ANTLR is 4.13.0, released May 21, 2023. As of 4.13.0, we have these <a href="https://github.com/antlr/antlr4/blob/master/doc/targets.md">code generation targets</a>:
 
 <ul>
 <li><a href="https://github.com/antlr/antlr4/blob/master/doc/java-target.md">Java</a>
@@ -83,9 +83,9 @@ The latest version of ANTLR is 4.12.0, released February 19, 2023. As of 4.12.0,
 <li><a href="https://github.com/antlr/antlr4/blob/master/doc/dart-target.md">DART</a></li>
 </ul>
 
-<p>All users should download the <a href="download/antlr-4.12.0-complete.jar">ANTLR tool itself</a> and then choose a runtime target below, unless you are using Java which is built into the tool jar.
+<p>All users should download the <a href="download/antlr-4.13.0-complete.jar">ANTLR tool itself</a> and then choose a runtime target below, unless you are using Java which is built into the tool jar.
 
-<p>See <a href="https://github.com/antlr/antlr4/releases/tag/4.12.0"><b>Release Notes</b></a>, <a href="https://github.com/antlr/antlr4/blob/master/README.md">README.md</a>, 
+<p>See <a href="https://github.com/antlr/antlr4/releases/tag/4.13.0"><b>Release Notes</b></a>, <a href="https://github.com/antlr/antlr4/blob/master/README.md">README.md</a>, 
 <a href="https://github.com/antlr/antlr4/blob/master/doc/getting-started.md">Getting started</a>,
 <a href="https://github.com/antlr/grammars-v4">ANTLR 4 grammar repository</a>, and <a href="https://github.com/antlr/antlr4/blob/master/doc/building-antlr.md">How to build ANTLR itself</a>.
 </p>
@@ -99,33 +99,33 @@ The latest version of ANTLR is 4.12.0, released February 19, 2023. As of 4.12.0,
 
 <ul>
 
-<li><a  href="download/antlr-4.12.0-complete.jar">Complete ANTLR 4.12.0 Java binaries jar</a>. Complete ANTLR 4.12.0 tool, Java runtime and ST 4.0.8, which lets you run the tool and the generated code.
+<li><a  href="download/antlr-4.13.0-complete.jar">Complete ANTLR 4.13.0 Java binaries jar</a>. Complete ANTLR 4.13.0 tool, Java runtime and ST 4.0.8, which lets you run the tool and the generated code.
 
-<li><a  href="https://github.com/antlr/antlr4/archive/4.12.0.zip">ANTLR 4.12.0 distribution (zip)</a>. Everything you need to build the tool and Java runtime from source.
+<li><a  href="https://github.com/antlr/antlr4/archive/4.13.0.zip">ANTLR 4.13.0 distribution (zip)</a>. Everything you need to build the tool and Java runtime from source.
 
-<li><a  href="download/antlr-runtime-4.12.0.jar">ANTLR 4.12.0 Java runtime binaries jar</a>. Only what's needed for building and executing parsers/lexers generated in Java.
+<li><a  href="download/antlr-runtime-4.13.0.jar">ANTLR 4.13.0 Java runtime binaries jar</a>. Only what's needed for building and executing parsers/lexers generated in Java.
 </ul>
 
 <p>The Java jars are <b>OSGi compatible</b> so you should be able to use them within Eclipse.
  
-<p>To use <b>maven</b>, refer to group ID <tt>org.antlr</tt> and artifact ID <tt>antlr4</tt> for the tool itself and <tt>antlr4-runtime</tt> for the Java runtime library in your <tt>pom.xml</tt> file. The latest version is 4.12.0:</p>
+<p>To use <b>maven</b>, refer to group ID <tt>org.antlr</tt> and artifact ID <tt>antlr4</tt> for the tool itself and <tt>antlr4-runtime</tt> for the Java runtime library in your <tt>pom.xml</tt> file. The latest version is 4.13.0:</p>
 
 <pre>
 &lt;dependency> 
   &lt;groupId>org.antlr&lt;/groupId> 
   &lt;artifactId>antlr4&lt;/artifactId> 
-  &lt;version>4.12.0&lt;/version> 
+  &lt;version>4.13.0&lt;/version> 
 &lt;/dependency> 
 </pre><br>
 
 <p>See <a href="http://www.antlr.org/api/maven-plugin/latest/index.html">ANTLR 4 Maven plugin</a>, <a href="http://www.antlr.org/api/maven-plugin/latest/usage.html">ANTLR 4 Maven plug-in usage</a>, and <a href="http://www.antlr.org/api/maven-plugin/latest/antlr4-mojo.html">ANTLR 4 Maven Plugin API</a>.
 
 <p>
-ANTLR v4 is written in ANTLR v4.x and StringTemplate 4.3. In antlr-4.12.0-complete.jar, you'll find everything you need to run the ANTLR tool and make its generated parsers work.</p>
+ANTLR v4 is written in ANTLR v4.x and StringTemplate 4.3. In antlr-4.13.0-complete.jar, you'll find everything you need to run the ANTLR tool and make its generated parsers work.</p>
 
 <h2>C# Target</h2>
 
-<p>Via nuget, use <a href="https://www.nuget.org/packages/Antlr4.Runtime.Standard/4.12.0">Install-Package Antlr4.Runtime.Standard</a> via Package Manager Console.</p>
+<p>Via nuget, use <a href="https://www.nuget.org/packages/Antlr4.Runtime.Standard/4.13.0">Install-Package Antlr4.Runtime.Standard</a> via Package Manager Console.</p>
 
 <!--
 <p>Or, download and unzip the .dll in <a href="http://www.antlr.org/download/antlr-csharp-runtime-4.9.1.zip">antlr-csharp-runtime-4.9.1.zip</a>.
@@ -158,7 +158,7 @@ Install with:
 
 <p><tt>npm install antlr4</tt><br>
 
-<p>Or, you can download <a  href="http://www.antlr.org/download/antlr-javascript-runtime-4.12.0.zip">antlr-javascript-runtime-4.12.0.zip</a>.
+<p>Or, you can download <a  href="http://www.antlr.org/download/antlr-javascript-runtime-4.13.0.zip">antlr-javascript-runtime-4.13.0.zip</a>.
 
 <p>The runtime is provided in the form of source code, so no additional installation is required. Simply refer to the JavaScript in that zip from your project, and eventually webpack it.
 
@@ -168,8 +168,8 @@ Install with:
 
 
 <ul>
-<li>Mac OS X universal lib binaries <a href="/download/antlr4-cpp-runtime-4.12.0-macos.zip">antlr4-cpp-runtime-4.12.0-macos.zip (.a, .dylib, .h)</a>
-<li>Use source distribution: <a href="/download/antlr4-cpp-runtime-4.12.0-source.zip">antlr4-cpp-runtime-4.12.0-source.zip (.h, .cpp)</a>
+<li>Mac OS X universal lib binaries <a href="/download/antlr4-cpp-runtime-4.13.0-macos.zip">antlr4-cpp-runtime-4.13.0-macos.zip (.a, .dylib, .h)</a>
+<li>Use source distribution: <a href="/download/antlr4-cpp-runtime-4.13.0-source.zip">antlr4-cpp-runtime-4.13.0-source.zip (.h, .cpp)</a>
 </ul>
 
 <it>For more prebuilt C++ binaries you can try <a href="https://conan.io/center/antlr4-cppruntime">conan.io</a>.</it>
