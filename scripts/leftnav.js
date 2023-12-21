@@ -4,7 +4,7 @@ document.write("<li><a href='/download.html'>Download</a></li>");
 document.write("<li>Resources");
 document.write("<ul>");
 document.write("<li><a href='https://github.com/antlr/antlr4/blob/master/doc/getting-started.md'>Getting Started</a></li>");
-document.write("<li><a href='http://pragprog.com/book/tpantlr2/the-definitive-antlr-4-reference'>ANTLR v4 Book</a></li>");
+document.write("<li><a href='http://pragprog.com/titles/tpantlr2/the-definitive-antlr-4-reference'>ANTLR v4 Book</a></li>");
 document.write("<li><a href='https://github.com/antlr/antlr4/blob/4.6/doc/index.md'>Documentation</a></li>");
 document.write("<li><a href='/api'>Runtime API</a></li>");
 document.write("<li><a href='http://pragprog.com/titles/tpantlr2/source_code'>Examples (from book)</a></li>");
